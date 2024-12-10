@@ -18,7 +18,7 @@ final class WASFeedbackView: UIView {
 
     private let titleLabel = UILabel()
     private let imageView = UIImageView()
-    private let actionButton = UIButton()
+    private let actionButton = UIButton(type: .system)
     private var action: (() -> Void)?
 
     // MARK: Inits
@@ -56,11 +56,15 @@ final class WASFeedbackView: UIView {
     }
 
     private func setupActionButton() {
+        var configuration = UIButton.Configuration.filled()
+        configuration.baseBackgroundColor = UIColor.systemPink
+        configuration.cornerStyle = .medium
+
+        actionButton.configuration = configuration
         actionButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
-        actionButton.backgroundColor = .black
 
         NSLayoutConstraint.activate([
-            actionButton.heightAnchor.constraint(equalToConstant: 40)
+            actionButton.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
 

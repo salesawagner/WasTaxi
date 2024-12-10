@@ -56,6 +56,7 @@ final class ListViewModel {
                         self?.state = .success(response.rides.toRows)
                     }
                 }
+
             case .failure:
                 DispatchQueue.main.async {
                     self?.state = .failure(.init(
