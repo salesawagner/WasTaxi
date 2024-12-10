@@ -1,5 +1,3 @@
-# Quero ser Itau
-
 Fala reviwer, tudo bem? Aqui está o projeto para o desafio. Para setup e gerenciamento do projeto eu utilizei algumas ferramentas como o `XcodeGen`, `Cocopods` e `Swiftlint` para facilitar no desenvolvimento, evitar conflitos e código mais limpo(lint). Optei por não colocar os arquivos de projeto(`.xcworkspace`, `.xcodeproj` etc...) e pods no `.gitignore` propositalmente para facilitar a execução dos projetos pra vcs. ;) 
 
 Se houver alguma dificuldade para executor os projetos, na guia **START** tem o passo a passo de como fazer o setup dos projetos. 
