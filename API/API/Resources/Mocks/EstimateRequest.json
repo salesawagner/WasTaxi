@@ -1,0 +1,1004 @@
+{
+    "origin": {
+        "latitude": -23.5215624,
+        "longitude": -46.763286699999995
+    },
+    "destination": {
+        "latitude": -23.5615351,
+        "longitude": -46.6562816
+    },
+    "distance": 20018,
+    "duration": 1920,
+    "options": [
+        {
+            "id": 1,
+            "name": "Homer Simpson",
+            "description": "Olá! Sou o Homer, seu motorista camarada! Relaxe e aproveite o passeio, com direito a rosquinhas e boas risadas (e talvez alguns desvios).",
+            "vehicle": "Plymouth Valiant 1973 rosa e enferrujado",
+            "review": {
+                "rating": 2,
+                "comment": "Motorista simpático, mas errou o caminho 3 vezes. O carro cheira a donuts."
+            },
+            "value": 50.05
+        },
+        {
+            "id": 2,
+            "name": "Dominic Toretto",
+            "description": "Ei, aqui é o Dom. Pode entrar, vou te levar com segurança e rapidez ao seu destino. Só não mexa no rádio, a playlist é sagrada.",
+            "vehicle": "Dodge Charger R/T 1970 modificado",
+            "review": {
+                "rating": 4,
+                "comment": "Que viagem incrível! O carro é um show à parte e o motorista, apesar de ter uma cara de poucos amigos, foi super gente boa. Recomendo!"
+            },
+            "value": 100.09
+        },
+        {
+            "id": 3,
+            "name": "James Bond",
+            "description": "Boa noite, sou James Bond. À seu dispor para um passeio suave e discreto. Aperte o cinto e aproveite a viagem.",
+            "vehicle": "Aston Martin DB5 clássico",
+            "review": {
+                "rating": 5,
+                "comment": "Serviço impecável! O motorista é a própria definição de classe e o carro é simplesmente magnífico. Uma experiência digna de um agente secreto."
+            },
+            "value": 200.18
+        }
+    ],
+    "routeResponse": {
+        "routes": [
+            {
+                "legs": [
+                    {
+                        "distanceMeters": 20018,
+                        "duration": "1922s",
+                        "staticDuration": "1922s",
+                        "polyline": {
+                            "encodedPolyline": "v`qnCpml|Ga@~Am@rB]lAYpA]|AS`AQz@YfAUz@Ox@G^Gz@ATMlAKx@I`@EVGZC\\AF?H?J@LBLBPH\\FTFR@LBJ@^?b@@|@@pA?bA?F@N@FBDDHVVVDB?D@VDVHB?XJPHPHHFHH@@LRJXDR@FF\\Fr@FVT|BR`CDd@JlAVpBHt@LfALtAH`AH|@JpADdA@b@Aj@?JEzAC`AI|AC^Cf@CVGx@E`@]vCaAKcAMXoCXqCBa@Dm@@c@Bg@?E?k@A}@ASEw@OsAWiACUIi@My@AM?K?K?KBSDODQFQ@I@E@[JOV]d@k@`@e@Z[X[V]JMLO^m@Ni@Je@Fa@B_@@M@K?]Ae@Ei@CUCMEWIe@Ia@o@_EKk@Ge@Kq@SmAW{BGm@Ci@Cu@?[?Q@e@?a@NsBHsAJo@TgAZyAViAXsA\\wAVaAV}@rAmFTkADSh@wCF[Jg@DW@I?E?EAEXoARy@p@}CDSn@qC\\eB|@uDl@kCHe@Pu@|@yD\\oAT{@f@sBb@kBh@sBHa@BIJg@n@aCLe@Nm@H]DOBIFQHWFOFOJSLSNQBETUPOPMHGNIVMRILENEJALCLCLAHANAT?B?LAR?d@@@?`@@J?|@Bt@@r@B^AlC@H?`@A^APCXANCZCPEVEPCHCHCTINERIDCHE~@g@v@g@ROVU`@]d@g@JIZ[JKJKDCDCFAFA`@e@bAmAt@y@RSrCeDn@u@j@q@b@g@hCyChEcFrI{J|@eAn@u@j@o@^c@`EyEvGyHlDcEZ_@\\c@b@m@RWdA{ALSpAkBl@w@n@w@DGPS@ANQ@C`@a@f@i@`AaAn@k@VU`B}A|@}@`@c@RWRU`@k@bAuAv@oAHMz@wABCLMXk@rEgLfCwGrKsX|EgMNa@vCwHdIySL]nBeFt@kBNa@j@yANYnBmFjAaD`AeCRc@Ri@z@wBTq@Tm@Zs@LUf@aAZi@^k@Ze@d@k@V[`@c@h@k@b@a@d@a@XUj@a@XQd@[f@Yr@_@|@_@FCf@S\\KZKf@Oj@QfCq@fFsAbCo@rGcBfEoA@C`@ODCJEh@WjC_BLGhAu@b@c@j@i@^_@b@a@b@a@LK\\Yb@[z@k@JG^WTOPQdA_ARUHIBADAXCxBaCTWPWLM|@aAt@w@^a@h@g@p@k@p@i@z@m@`Am@vAs@vAs@bF_C|BgADCzBcAfCmAfCmA|E_CDA^Or@[`@Ov@_@hB}@n@[f@KPGv@YjBo@XKTE\\GPCf@Cl@Ap@@vABlAJXDV\\@@BDDH@D@B?D?D?@AJADCFCBE@EBC@G@WBs@CS?IAMCUMGGAAACCG?S?GAIAIEK?M?MCmCAa@?C?G?]EyCAQ?SCUAOMm@EIOQm@o@SUc@e@a@a@OOi@]YYIGwA{Ai@m@CG[[SSOCA?AAECQQm@q@CCg@k@c@g@eAkASSEEMMKM[YY[gBiBs@u@Y[s@u@GKGIQQSQ]a@q@w@{@}@KQIMCIAAESCO?GCM?o@?EDkB?]Ag@@I?OHe@@C@CHKB_B?S@uA@c@@c@?I@Y?S?WAYAQA]C]E]E[ESESCMCICQEOAIKWISEKSSkA_C]m@sAmCwBcEGOqAgCyAsCKMc@{@ISGMIUGUCMAGAGAC?C?A@A@AAGCWCMCQ?Y?Q@s@?YA[AGGe@AG?EG_@G]CMOg@m@_A]g@ACMSy@oAu@kAc@s@qAqBk@}@a@o@iAeBeA_BMQKOOUIOcAaBc@o@kAgBa@m@U]m@{@ACQYIMMQs@iAkAiBq@aAIQOYW_@a@m@GIQWMOKQMQQQk@k@[Yg@g@[YUSsEkEUUOOu@u@A?o@m@WWOOMKIKSQw@u@][UWUUu@s@_@_@WWk@i@c@a@a@]MMGGIIGGAG?CCGMUACCCEEKIOIOKIEa@QYKKCUIEAICIEGC[^MPSVUZCDOP[b@QTu@y@UWKKAAm@o@e@e@o@q@CCo@q@k@o@ECSUGGKKm@t@CDIHUXCD"
+                        },
+                        "startLocation": {
+                            "latLng": {
+                                "latitude": -23.5215624,
+                                "longitude": -46.763286699999995
+                            }
+                        },
+                        "endLocation": {
+                            "latLng": {
+                                "latitude": -23.5615351,
+                                "longitude": -46.6562816
+                            }
+                        },
+                        "steps": [
+                            {
+                                "distanceMeters": 853,
+                                "staticDuration": "80s",
+                                "polyline": {
+                                    "encodedPolyline": "v`qnCpml|Ga@~Am@rB]lAYpA]|AS`AQz@YfAUz@Ox@G^Gz@ATMlAKx@I`@EVGZC\\AF?H?J@LBLBPH\\FTFR@LBJ@^?b@@|@@pA?bA"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5215624,
+                                        "longitude": -46.763286699999995
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.520085299999998,
+                                        "longitude": -46.7712988
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "DEPART",
+                                    "instructions": "Siga para oeste na Av. Pres. Kenedy em direção a R. Antônio Carlos de Faria"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,9 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 247,
+                                "staticDuration": "22s",
+                                "polyline": {
+                                    "encodedPolyline": "pwpnCr_n|G?F@N@FBDDHVVVDB?D@VDVHB?XJPHPHHFHH@@LRJXDR@FF\\Fr@FV"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.520085299999998,
+                                        "longitude": -46.7712988
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5214176,
+                                        "longitude": -46.7729396
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "TURN_SLIGHT_LEFT",
+                                    "instructions": "Curvar ligeiramente à esquerda em direção a R. Anastácia Jachimov"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,2 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 859,
+                                "staticDuration": "61s",
+                                "polyline": {
+                                    "encodedPolyline": "z_qnCzin|GT|BR`CDd@JlAVpBHt@LfALtAH`AH|@JpADdA@b@Aj@?JEzAC`AI|AC^Cf@CVGx@E`@]vC"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5214176,
+                                        "longitude": -46.7729396
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5218402,
+                                        "longitude": -46.7812541
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "NAME_CHANGE",
+                                    "instructions": "Continue até Av. Pres. Kenedy"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,9 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 75,
+                                "staticDuration": "11s",
+                                "polyline": {
+                                    "encodedPolyline": "nbqnCx}o|GaAKcAM"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5218402,
+                                        "longitude": -46.7812541
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5211749,
+                                        "longitude": -46.781118799999994
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "TURN_RIGHT",
+                                    "instructions": "Vire à direita em direção a Praça Pres. Kenedy"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "75 m"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 562,
+                                "staticDuration": "63s",
+                                "polyline": {
+                                    "encodedPolyline": "h~pnC~|o|GXoCXqCBa@Dm@@c@Bg@?E?k@A}@ASEw@OsAWiACUIi@My@AM?K?K?KBSDODQFQ@I@E@["
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5211749,
+                                        "longitude": -46.781118799999994
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.521261799999998,
+                                        "longitude": -46.7757206
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "TURN_RIGHT",
+                                    "instructions": "Vire à direita depois de Roni Tacógrafos (à direita)\nPasse por Tapeçaria Trevo (à esquerda em 400 m)"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,6 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 200,
+                                "staticDuration": "13s",
+                                "polyline": {
+                                    "encodedPolyline": "z~pnCf{n|GJOV]d@k@`@e@Z[X[V]JMLO^m@"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.521261799999998,
+                                        "longitude": -46.7757206
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5224774,
+                                        "longitude": -46.774274000000005
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "NAME_CHANGE",
+                                    "instructions": "R. João Kaufmann vira ligeiramente à direita e esta torna-se na Viaduto Maria Campos"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,2 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 1902,
+                                "staticDuration": "108s",
+                                "polyline": {
+                                    "encodedPolyline": "nfqnCdrn|GNi@Je@Fa@B_@@M@K?]Ae@Ei@CUCMEWIe@Ia@o@_EKk@Ge@Kq@SmAW{BGm@Ci@Cu@?[?Q@e@?a@NsBHsAJo@TgAZyAViAXsA\\wAVaAV}@rAmFTkADSh@wCF[Jg@DW@I?E?EAEXoARy@p@}CDSn@qC\\eB|@uDl@kCHe@Pu@"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5224774,
+                                        "longitude": -46.774274000000005
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.525360199999998,
+                                        "longitude": -46.756426000000005
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "NAME_CHANGE",
+                                    "instructions": "Continue até Av. das Nações Unidas\nPasse por Havan Osasco ( Marginal Tietê ) (à direita em 1,1 km)"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "1,9 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "2 minutos"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 100,
+                                "staticDuration": "6s",
+                                "polyline": {
+                                    "encodedPolyline": "nxqnCtbk|G|@yD"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.525360199999998,
+                                        "longitude": -46.756426000000005
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.525665399999998,
+                                        "longitude": -46.755499199999996
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "NAME_CHANGE",
+                                    "instructions": "Continue até Rua Andries Both"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,1 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 379,
+                                "staticDuration": "21s",
+                                "polyline": {
+                                    "encodedPolyline": "lzqnCz|j|G\\oAT{@f@sBb@kBh@sBHa@BIJg@n@aC"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.525665399999998,
+                                        "longitude": -46.755499199999996
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5268901,
+                                        "longitude": -46.7520288
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "TURN_RIGHT",
+                                    "instructions": "Mantenha-se à direita para continuar na Rua Andries Both"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,4 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 991,
+                                "staticDuration": "53s",
+                                "polyline": {
+                                    "encodedPolyline": "`brnCdgj|GLe@Nm@H]DOBIFQHWFOFOJSLSNQBETUPOPMHGNIVMRILENEJALCLCLAHANAT?B?LAR?d@@@?`@@J?|@Bt@@r@B^AlC@H?`@A^APCXANCZCPEVEPCHCHCTINERIDCHE~@g@v@g@ROVU`@]d@g@JIZ[JKJKDCDCFAFA"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5268901,
+                                        "longitude": -46.7520288
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.534396400000002,
+                                        "longitude": -46.7483901
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "NAME_CHANGE",
+                                    "instructions": "Continue até R. André Beauneveu"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "1,0 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 4514,
+                                "staticDuration": "251s",
+                                "polyline": {
+                                    "encodedPolyline": "~psnClpi|G`@e@bAmAt@y@RSrCeDn@u@j@q@b@g@hCyChEcFrI{J|@eAn@u@j@o@^c@`EyEvGyHlDcEZ_@\\c@b@m@RWdA{ALSpAkBl@w@n@w@DGPS@ANQ@C`@a@f@i@`AaAn@k@VU`B}A|@}@`@c@RWRU`@k@bAuAv@oAHMz@wABCLMXk@rEgLfCwGrKsX|EgMNa@vCwHdIySL]nBeFt@kBNa@j@yA"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.534396400000002,
+                                        "longitude": -46.7483901
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5584521,
+                                        "longitude": -46.7132544
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "MERGE",
+                                    "instructions": "Convergir com BR-116"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "4,5 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "4 minutos"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 16,
+                                "staticDuration": "1s",
+                                "polyline": {
+                                    "encodedPolyline": "hgxnCxtb|GNY"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5584521,
+                                        "longitude": -46.7132544
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.558526399999998,
+                                        "longitude": -46.713121900000004
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "STRAIGHT",
+                                    "instructions": "Continue em frente para permanecer na BR-116"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "16 m"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 1889,
+                                "staticDuration": "108s",
+                                "polyline": {
+                                    "encodedPolyline": "xgxnC~sb|GnBmFjAaD`AeCRc@Ri@z@wBTq@Tm@Zs@LUf@aAZi@^k@Ze@d@k@V[`@c@h@k@b@a@d@a@XUj@a@XQd@[f@Yr@_@|@_@FCf@S\\KZKf@Oj@QfCq@fFsAbCo@rGcBfEoA@C`@ODCJEh@WjC_BLGhAu@"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.558526399999998,
+                                        "longitude": -46.713121900000004
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.571316,
+                                        "longitude": -46.702322099999996
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "TURN_LEFT",
+                                    "instructions": "Mantenha-se à esquerda para continuar na Marginal Pinheiros"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "1,9 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "2 minutos"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 1757,
+                                "staticDuration": "102s",
+                                "polyline": {
+                                    "encodedPolyline": "vwznCnp`|Gb@c@j@i@^_@b@a@b@a@LK\\Yb@[z@k@JG^WTOPQdA_ARUHIBADAXCxBaCTWPWLM|@aAt@w@^a@h@g@p@k@p@i@z@m@`Am@vAs@vAs@bF_C|BgADCzBcAfCmAfCmA|E_CDA^Or@[`@Ov@_@hB}@n@["
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.571316,
+                                        "longitude": -46.702322099999996
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.584436,
+                                        "longitude": -46.6929801
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "STRAIGHT",
+                                    "instructions": "Continue em frente para permanecer na Marginal Pinheiros"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "1,8 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "2 minutos"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 161,
+                                "staticDuration": "16s",
+                                "polyline": {
+                                    "encodedPolyline": "vi}nCbv~{Gf@KPGv@YjBo@XKTE"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.584436,
+                                        "longitude": -46.6929801
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5857904,
+                                        "longitude": -46.6924163
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "TURN_SLIGHT_RIGHT",
+                                    "instructions": "Vire ligeiramente à direita em direção a R. São Bonifácio"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,2 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 210,
+                                "staticDuration": "21s",
+                                "polyline": {
+                                    "encodedPolyline": "dr}nCrr~{G\\GPCf@Cl@Ap@@vABlAJXD"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5857904,
+                                        "longitude": -46.6924163
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5876682,
+                                        "longitude": -46.6924504
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "NAME_CHANGE",
+                                    "instructions": "Continue até R. São Bonifácio"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,2 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 90,
+                                "staticDuration": "13s",
+                                "polyline": {
+                                    "encodedPolyline": "|}}nCxr~{GV\\@@BDDH@D@B?D?D?@AJADCFCBE@EBC@G@WB"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5876682,
+                                        "longitude": -46.6924504
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.587566199999998,
+                                        "longitude": -46.6930306
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "RAMP_RIGHT",
+                                    "instructions": "Siga pela saída em direção a Itaim/Ibirapuera/Av. J. Kubitschek"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "90 m"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 113,
+                                "staticDuration": "16s",
+                                "polyline": {
+                                    "encodedPolyline": "h}}nClv~{Gs@CS?IAMCUMGGAAACCG?S?GAIAIEK"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.587566199999998,
+                                        "longitude": -46.6930306
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5868523,
+                                        "longitude": -46.6925011
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "NAME_CHANGE",
+                                    "instructions": "Continue até Praça Des. Percival de Oliveira"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,1 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 213,
+                                "staticDuration": "21s",
+                                "polyline": {
+                                    "encodedPolyline": "xx}nCbs~{G?M?MCmCAa@?C?G?]EyCAQ"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5868523,
+                                        "longitude": -46.6925011
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5867768,
+                                        "longitude": -46.690414
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "NAME_CHANGE",
+                                    "instructions": "Praça Des. Percival de Oliveira vira ligeiramente à direita e esta torna-se na Ponte Engenheiro Roberto Rossi Zuccolo"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,2 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 386,
+                                "staticDuration": "43s",
+                                "polyline": {
+                                    "encodedPolyline": "jx}nC`f~{G?SCUAOMm@EIOQm@o@SUc@e@a@a@OOi@]YYIGwA{Ai@m@CG[[SS"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5867768,
+                                        "longitude": -46.690414
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5845126,
+                                        "longitude": -46.6876749
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "TURN_RIGHT",
+                                    "instructions": "Mantenha-se à direita para continuar na Av. Cidade Jardim"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,4 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 444,
+                                "staticDuration": "39s",
+                                "polyline": {
+                                    "encodedPolyline": "dj}nC|t}{GOCA?AAECQQm@q@CCg@k@c@g@eAkASSEEMMKM[YY[gBiBs@u@Y[s@u@"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5845126,
+                                        "longitude": -46.6876749
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.581605399999997,
+                                        "longitude": -46.6847135
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "TURN_SLIGHT_LEFT",
+                                    "instructions": "Curvar ligeiramente à esquerda em direção a Tn Max Feffer"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,4 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 374,
+                                "staticDuration": "34s",
+                                "polyline": {
+                                    "encodedPolyline": "`x|nClb}{GGKGIQQSQ]a@q@w@{@}@KQIMCIAAESCO?GCM?o@?EDkB?]Ag@@I?OHe@@C@CHK"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.581605399999997,
+                                        "longitude": -46.6847135
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5805755,
+                                        "longitude": -46.681570699999995
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "TURN_SLIGHT_RIGHT",
+                                    "instructions": "Curve ligeiramente à direita para continuar na Tn Max Feffer"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,4 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 3059,
+                                "staticDuration": "641s",
+                                "polyline": {
+                                    "encodedPolyline": "rq|nCxn|{GB_B?S@uA@c@@c@?I@Y?S?WAYAQA]C]E]E[ESESCMCICQEOAIKWISEKSSkA_C]m@sAmCwBcEGOqAgCyAsCKMc@{@ISGMIUGUCMAGAGAC?C?A@A@AAGCWCMCQ?Y?Q@s@?YA[AGGe@AG?EG_@G]CMOg@m@_A]g@ACMSy@oAu@kAc@s@qAqBk@}@a@o@iAeBeA_BMQKOOUIOcAaBc@o@kAgBa@m@U]m@{@ACQYIMMQs@iAkAiBq@aAIQOYW_@a@m@GIQWMOKQMQQQk@k@[Yg@g@[YUSsEkEUUOOu@u@A?o@m@WWOOMKIKSQw@u@][UWUUu@s@_@_@WWk@i@c@a@a@]MMGGIIGG"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5805755,
+                                        "longitude": -46.681570699999995
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5656116,
+                                        "longitude": -46.6575188
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "MERGE",
+                                    "instructions": "Convergir com Av. Nove de Julho"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "3,1 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "11 minutos"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 148,
+                                "staticDuration": "25s",
+                                "polyline": {
+                                    "encodedPolyline": "`tynCnxw{GAG?CCGMUACCCEEKIOIOKIEa@QYKKCUIEAICIEGC"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5656116,
+                                        "longitude": -46.6575188
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.564540599999997,
+                                        "longitude": -46.6567454
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "TURN_SLIGHT_RIGHT",
+                                    "instructions": "Curvar ligeiramente à direita em direção a R. Convenção de Itu"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,1 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 125,
+                                "staticDuration": "27s",
+                                "polyline": {
+                                    "encodedPolyline": "jmynCtsw{G[^MPSVUZCDOP[b@QT"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.564540599999997,
+                                        "longitude": -46.6567454
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.563794599999998,
+                                        "longitude": -46.6576656
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "TURN_LEFT",
+                                    "instructions": "Vire à esquerda em direção a Alameda Jaú/Praça Alexandre de Gusmão"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,1 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 265,
+                                "staticDuration": "97s",
+                                "polyline": {
+                                    "encodedPolyline": "thynClyw{Gu@y@UWKKAAm@o@e@e@o@q@CCo@q@k@o@ECSU"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.563794599999998,
+                                        "longitude": -46.6576656
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5620695,
+                                        "longitude": -46.6558701
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "TURN_RIGHT",
+                                    "instructions": "Vire à direita em direção a Alameda Casa Branca/Praça Alexandre de Gusmão\nContinue a seguir Alameda Casa Branca"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "0,3 km"
+                                    },
+                                    "staticDuration": {
+                                        "text": "2 minutos"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            },
+                            {
+                                "distanceMeters": 86,
+                                "staticDuration": "29s",
+                                "polyline": {
+                                    "encodedPolyline": "|}xnCdnw{GGGKKm@t@CDIHUXCD"
+                                },
+                                "startLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5620695,
+                                        "longitude": -46.6558701
+                                    }
+                                },
+                                "endLocation": {
+                                    "latLng": {
+                                        "latitude": -23.5615351,
+                                        "longitude": -46.6562816
+                                    }
+                                },
+                                "navigationInstruction": {
+                                    "maneuver": "TURN_LEFT",
+                                    "instructions": "Vire à esquerda em direção a Av. Paulista\nEncerrada Domingos entre as 10:00 – 19:00\nO destino encontra-se à direita"
+                                },
+                                "localizedValues": {
+                                    "distance": {
+                                        "text": "86 m"
+                                    },
+                                    "staticDuration": {
+                                        "text": "1 min"
+                                    }
+                                },
+                                "travelMode": "DRIVE"
+                            }
+                        ],
+                        "localizedValues": {
+                            "distance": {
+                                "text": "20,0 km"
+                            },
+                            "duration": {
+                                "text": "32 minutos"
+                            },
+                            "staticDuration": {
+                                "text": "32 minutos"
+                            }
+                        }
+                    }
+                ],
+                "distanceMeters": 20018,
+                "duration": "1920s",
+                "staticDuration": "1920s",
+                "polyline": {
+                    "encodedPolyline": "v`qnCpml|Ga@~Am@rB]lAYpA]|AS`AQz@YfAUz@Ox@G^Gz@ATMlAKx@I`@EVGZC\\AF?H?J@LBLBPH\\FTFR@LBJ@^?b@@|@@pA?bA?F@N@FBDDHVVVDB?D@VDVHB?XJPHPHHFHH@@LRJXDR@FF\\Fr@FVT|BR`CDd@JlAVpBHt@LfALtAH`AH|@JpADdA@b@Aj@?JEzAC`AI|AC^Cf@CVGx@E`@]vCaAKcAMXoCXqCBa@Dm@@c@Bg@?E?k@A}@ASEw@OsAWiACUIi@My@AM?K?K?KBSDODQFQ@I@E@[JOV]d@k@`@e@Z[X[V]JMLO^m@Ni@Je@Fa@B_@@M@K?]Ae@Ei@CUCMEWIe@Ia@o@_EKk@Ge@Kq@SmAW{BGm@Ci@Cu@?[?Q@e@?a@NsBHsAJo@TgAZyAViAXsA\\wAVaAV}@rAmFTkADSh@wCF[Jg@DW@I?E?EAEXoARy@p@}CDSn@qC\\eB|@uDl@kCHe@Pu@|@yD\\oAT{@f@sBb@kBh@sBHa@BIJg@n@aCLe@Nm@H]DOBIFQHWFOFOJSLSNQBETUPOPMHGNIVMRILENEJALCLCLAHANAT?B?LAR?d@@@?`@@J?|@Bt@@r@B^AlC@H?`@A^APCXANCZCPEVEPCHCHCTINERIDCHE~@g@v@g@ROVU`@]d@g@JIZ[JKJKDCDCFAFA`@e@bAmAt@y@RSrCeDn@u@j@q@b@g@hCyChEcFrI{J|@eAn@u@j@o@^c@`EyEvGyHlDcEZ_@\\c@b@m@RWdA{ALSpAkBl@w@n@w@DGPS@ANQ@C`@a@f@i@`AaAn@k@VU`B}A|@}@`@c@RWRU`@k@bAuAv@oAHMz@wABCLMXk@rEgLfCwGrKsX|EgMNa@vCwHdIySL]nBeFt@kBNa@j@yANYnBmFjAaD`AeCRc@Ri@z@wBTq@Tm@Zs@LUf@aAZi@^k@Ze@d@k@V[`@c@h@k@b@a@d@a@XUj@a@XQd@[f@Yr@_@|@_@FCf@S\\KZKf@Oj@QfCq@fFsAbCo@rGcBfEoA@C`@ODCJEh@WjC_BLGhAu@b@c@j@i@^_@b@a@b@a@LK\\Yb@[z@k@JG^WTOPQdA_ARUHIBADAXCxBaCTWPWLM|@aAt@w@^a@h@g@p@k@p@i@z@m@`Am@vAs@vAs@bF_C|BgADCzBcAfCmAfCmA|E_CDA^Or@[`@Ov@_@hB}@n@[f@KPGv@YjBo@XKTE\\GPCf@Cl@Ap@@vABlAJXDV\\@@BDDH@D@B?D?D?@AJADCFCBE@EBC@G@WBs@CS?IAMCUMGGAAACCG?S?GAIAIEK?M?MCmCAa@?C?G?]EyCAQ?SCUAOMm@EIOQm@o@SUc@e@a@a@OOi@]YYIGwA{Ai@m@CG[[SSOCA?AAECQQm@q@CCg@k@c@g@eAkASSEEMMKM[YY[gBiBs@u@Y[s@u@GKGIQQSQ]a@q@w@{@}@KQIMCIAAESCO?GCM?o@?EDkB?]Ag@@I?OHe@@C@CHKB_B?S@uA@c@@c@?I@Y?S?WAYAQA]C]E]E[ESESCMCICQEOAIKWISEKSSkA_C]m@sAmCwBcEGOqAgCyAsCKMc@{@ISGMIUGUCMAGAGAC?C?A@A@AAGCWCMCQ?Y?Q@s@?YA[AGGe@AG?EG_@G]CMOg@m@_A]g@ACMSy@oAu@kAc@s@qAqBk@}@a@o@iAeBeA_BMQKOOUIOcAaBc@o@kAgBa@m@U]m@{@ACQYIMMQs@iAkAiBq@aAIQOYW_@a@m@GIQWMOKQMQQQk@k@[Yg@g@[YUSsEkEUUOOu@u@A?o@m@WWOOMKIKSQw@u@][UWUUu@s@_@_@WWk@i@c@a@a@]MMGGIIGGAG?CCGMUACCCEEKIOIOKIEa@QYKKCUIEAICIEGC[^MPSVUZCDOP[b@QTu@y@UWKKAAm@o@e@e@o@q@CCo@q@k@o@ECSUGGKKm@t@CDIHUXCD"
+                },
+                "description": "Marginal Pinheiros",
+                "warnings": [
+                    "Este trajeto inclui estradas restritas mediante a matrícula."
+                ],
+                "viewport": {
+                    "low": {
+                        "latitude": -23.587874799999998,
+                        "longitude": -46.7812541
+                    },
+                    "high": {
+                        "latitude": -23.5198505,
+                        "longitude": -46.6557734
+                    }
+                },
+                "travelAdvisory": {},
+                "localizedValues": {
+                    "distance": {
+                        "text": "20,0 km"
+                    },
+                    "duration": {
+                        "text": "32 minutos"
+                    },
+                    "staticDuration": {
+                        "text": "32 minutos"
+                    }
+                },
+                "routeLabels": [
+                    "DEFAULT_ROUTE"
+                ],
+                "polylineDetails": {}
+            }
+        ],
+        "geocodingResults": {
+            "origin": {
+                "geocoderStatus": {},
+                "type": [
+                    "street_address"
+                ],
+                "placeId": "EkJBdi4gUHJlcy4gS2VuZWR5LCAyMzg1IC0gUmVtw6lkaW9zLCBPc2FzY28gLSBTUCwgMDI2NzUtMDMxLCBCcmF6aWwiMRIvChQKEgknPMO_If_OlBHFU09iYnHUBBDREioUChIJ25E2Vx__zpQRGRounJHunRY"
+            },
+            "destination": {
+                "geocoderStatus": {},
+                "type": [
+                    "street_address"
+                ],
+                "placeId": "ChIJvS4WJslZzpQRfufYwqjow_Y"
+            }
+        }
+    }
+}

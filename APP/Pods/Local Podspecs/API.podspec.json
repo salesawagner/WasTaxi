@@ -1,0 +1,25 @@
+{
+  "name": "API",
+  "version": "1.0.0",
+  "summary": "API client SDK",
+  "homepage": "http://www.wagnersales.com.br",
+  "platforms": {
+    "ios": "17.0"
+  },
+  "swift_versions": "5.0",
+  "license": {
+    "type": "Private"
+  },
+  "authors": {
+    "Wagner Sales": "salesawagner@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/salesawagner/wasapi",
+    "tag": "API-1.0.0"
+  },
+  "source_files": "API/**/*.{h,m,swift}",
+  "resource_bundles": {
+    "API": "API/**/*.json"
+  },
+  "swift_version": "5.0"
+}

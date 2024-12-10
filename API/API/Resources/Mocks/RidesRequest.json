@@ -1,0 +1,18 @@
+{
+    "customer_id": "CT01",
+    "rides": [
+        {
+            "id": 100,
+            "date": "2024-10-24T05:26:02",
+            "origin": "753 Spruce Street, 447, Lake Duncanstead, 29338-7490",
+            "destination": "19604 E Central Avenue, 754, New Luigi, 88727-7239",
+            "distance": 61.22029253156398,
+            "duration": "24:55",
+            "driver": {
+                "id": 3,
+                "name": "Homer Simpson"
+            },
+            "value": 176.63983274824963
+        }
+    ]
+}
