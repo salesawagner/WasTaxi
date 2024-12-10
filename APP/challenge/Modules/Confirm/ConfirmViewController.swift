@@ -180,7 +180,7 @@ extension ConfirmViewController: MKMapViewDelegate {
         }
 
         let renderer = MKPolylineRenderer(polyline: polyline)
-        renderer.strokeColor = .blue
+        renderer.strokeColor = Colors.primary
         renderer.lineWidth = 4.0
         return renderer
     }

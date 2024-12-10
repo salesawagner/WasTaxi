@@ -43,32 +43,32 @@ final class ListCell: UITableViewCell {
     }
 
     private func setupLabels() {
-        driverLabel.font = UIFont.preferredFont(forTextStyle: .title1).bold()
-        driverLabel.textColor = .darkText
+        driverLabel.font = Typography.headline
+        driverLabel.textColor = Colors.onBackground
 
-        dateLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        dateLabel.textColor = .gray
+        dateLabel.font = Typography.callout
+        dateLabel.textColor = Colors.placeholder
 
-        originLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        originLabel.textColor = .darkText
+        originLabel.font = Typography.callout
+        originLabel.textColor = Colors.onBackground
 
-        destinationLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        destinationLabel.textColor = .darkText
+        destinationLabel.font = Typography.callout
+        destinationLabel.textColor = Colors.onBackground
 
-        durationLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        durationLabel.textColor = .darkText
+        durationLabel.font = Typography.callout
+        durationLabel.textColor = Colors.onBackground
 
-        distanceLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        distanceLabel.textColor = .darkText
+        distanceLabel.font = Typography.callout
+        distanceLabel.textColor = Colors.onBackground
 
-        valueLabel.font = UIFont.preferredFont(forTextStyle: .caption1).bold()
-        valueLabel.textColor = .darkText
+        valueLabel.font = Typography.callout
+        valueLabel.textColor = Colors.onBackground
     }
 
     private func setupStackView() {
         let mainStackView = UIStackView()
         mainStackView.axis = .vertical
-        mainStackView.spacing = 8
+        mainStackView.spacing = Spacing.small
         mainStackView.addArrangedSubview(driverLabel)
         mainStackView.addArrangedSubview(dateLabel)
         mainStackView.addArrangedSubview(UIView())
@@ -76,8 +76,8 @@ final class ListCell: UITableViewCell {
         mainStackView.addArrangedSubview(distanceLabel)
         mainStackView.addArrangedSubview(valueLabel)
         mainStackView.addArrangedSubview(UIView())
-        mainStackView.addArrangedSubview(iconStackView(color: .green, label: originLabel))
-        mainStackView.addArrangedSubview(iconStackView(color: .orange, label: destinationLabel))
+        mainStackView.addArrangedSubview(iconStackView(color: Colors.secondary, label: originLabel))
+        mainStackView.addArrangedSubview(iconStackView(color: Colors.primary, label: destinationLabel))
         mainStackView.fill(on: contentView, insets: .all(constant: 24))
     }
 
@@ -93,7 +93,7 @@ final class ListCell: UITableViewCell {
 
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = 4
+        stackView.spacing = Spacing.extraSmall
         stackView.alignment = .center
         stackView.addArrangedSubview(view)
         stackView.addArrangedSubview(label)

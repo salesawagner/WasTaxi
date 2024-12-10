@@ -17,8 +17,7 @@ final class ConfirmCell: UITableViewCell {
     private let vehicleLabel = UILabel()
     private let ratingLabel = UILabel()
     private let valueLabel = UILabel()
-    private let actionButton = UIButton(type: .system)
-    private let isLoading: Bool = false
+    private let actionButton = Buttons.primary()
     private var buttonAction: (() -> Void)?
 
     // MARK: Inits
@@ -45,55 +44,32 @@ final class ConfirmCell: UITableViewCell {
     }
 
     private func setupLabels() {
-        driverLabel.font = UIFont.preferredFont(forTextStyle: .title1).bold()
-        driverLabel.textColor = .darkText
+        driverLabel.font = Typography.headline
+        driverLabel.textColor = Colors.onBackground
 
-        descriptionLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
+        descriptionLabel.font = Typography.callout
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.textColor = .gray
+        descriptionLabel.textColor = Colors.placeholder
 
-        vehicleLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        vehicleLabel.textColor = .darkText
+        vehicleLabel.font = Typography.callout
+        vehicleLabel.textColor = Colors.onBackground
 
-        ratingLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        ratingLabel.textColor = .darkText
+        ratingLabel.font = Typography.callout
+        ratingLabel.textColor = Colors.onBackground
 
-        valueLabel.font = UIFont.preferredFont(forTextStyle: .caption1).bold()
-        valueLabel.textColor = .darkText
+        valueLabel.font = Typography.callout
+        valueLabel.textColor = Colors.onBackground
     }
 
     private func setupActionButton() {
-        let title = "Escolher"
-        var configuration = UIButton.Configuration.filled()
-        configuration.title = title
-        configuration.baseBackgroundColor = UIColor.systemPink
-        configuration.cornerStyle = .medium
-
-        actionButton.configuration = configuration
-        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        actionButton.configuration?.title = "Escolher"
         actionButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
-        actionButton.configurationUpdateHandler = { [weak self] button in
-            var configuration = button.configuration
-            if let self = self, self.isLoading {
-                configuration?.title = ""
-                configuration?.showsActivityIndicator = true
-            } else {
-                configuration?.title = title
-                configuration?.showsActivityIndicator = false
-            }
-
-            button.configuration = configuration
-        }
-
-        NSLayoutConstraint.activate([
-            actionButton.heightAnchor.constraint(equalToConstant: 48)
-        ])
     }
 
     private func setupStackView() {
         let rideStackView = UIStackView()
         rideStackView.axis = .vertical
-        rideStackView.spacing = 8
+        rideStackView.spacing = Spacing.small
         rideStackView.addArrangedSubview(driverLabel)
         rideStackView.addArrangedSubview(descriptionLabel)
         rideStackView.addArrangedSubview(ratingLabel)
@@ -102,7 +78,7 @@ final class ConfirmCell: UITableViewCell {
         rideStackView.addArrangedSubview(UIView())
         rideStackView.addArrangedSubview(actionButton)
 
-        rideStackView.fill(on: contentView, insets: .all(constant: 24))
+        rideStackView.fill(on: contentView, insets: .all(constant: Spacing.large))
     }
 
     // MARK: Internal Methods

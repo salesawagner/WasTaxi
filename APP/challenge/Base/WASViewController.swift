@@ -23,7 +23,7 @@ class WASViewController: UIViewController {
     // MARK: Setups
 
     func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = Colors.background
         setupNavigationController()
         setupActivityIndicator()
         setupFeedBackView()
@@ -32,9 +32,10 @@ class WASViewController: UIViewController {
     func setupNavigationController() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(red: 240/255, green: 244/255, blue: 248/255, alpha: 1)
+        appearance.backgroundColor = Colors.surface
         appearance.titleTextAttributes = [
-            .font: UIFont.preferredFont(forTextStyle: .footnote)
+            .font: UIFont.preferredFont(forTextStyle: .footnote),
+            .foregroundColor: Colors.onSurface
         ]
 
         navigationController?.navigationBar.standardAppearance = appearance
@@ -44,7 +45,7 @@ class WASViewController: UIViewController {
     func setupActivityIndicator() {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.color = .darkText
+        activityIndicator.color = Colors.onBackground
 
         view.addSubview(activityIndicator)
         NSLayoutConstraint.activate([
@@ -74,8 +75,9 @@ class WASViewController: UIViewController {
 
     func addBackButton() {
         let backButton = UIButton(type: .custom)
-        let backImage = UIImage(named: "ic_chevron-left")
+        let backImage = UIImage(named: "ic_chevron-left")?.withRenderingMode(.alwaysTemplate)
         backButton.setImage(backImage, for: .normal)
+        backButton.tintColor = Colors.onSurface
         backButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)

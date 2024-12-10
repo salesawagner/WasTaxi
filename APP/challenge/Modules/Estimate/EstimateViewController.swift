@@ -13,11 +13,11 @@ final class EstimateViewController: WASViewController {
     var viewModel: EstimateViewModelProtocol
 
     let originLabel = UILabel()
-    let originTextField = UITextField()
+    let originTextField = TextFields.primary(placeholder: "Insira o endereço")
     let destinationLabel = UILabel()
-    let destinationTextField = UITextField()
+    let destinationTextField = TextFields.primary(placeholder: "Insira o endereço")
     let errorLabel = UILabel()
-    let actionButton = UIButton(type: .system)
+    let actionButton = Buttons.primary()
     var isLoading: Bool = false
 
     weak var bottomConstraint: NSLayoutConstraint?
@@ -89,37 +89,31 @@ final class EstimateViewController: WASViewController {
 
     private func setupOriginLabel() {
         originLabel.text = "Qual Origem?"
-        originLabel.textColor = .darkText
-        originLabel.font = UIFont.preferredFont(forTextStyle: .title1).bold()
+        originLabel.textColor = Colors.onBackground
+        originLabel.font = Typography.headline
         originLabel.adjustsFontForContentSizeCategory = true
     }
 
     private func setupOriginTextField() {
-        originTextField.placeholder = "Insira o endereço"
-        originTextField.font = UIFont.preferredFont(forTextStyle: .title3)
-        originTextField.backgroundColor = .clear
         originTextField.delegate = self
         originTextField.addTarget(self, action: #selector(originChanged), for: .editingChanged)
     }
 
     private func setupDestinationLabel() {
         destinationLabel.text = "Qual Destino?"
-        destinationLabel.textColor = .darkText
-        destinationLabel.font = UIFont.preferredFont(forTextStyle: .title1).bold()
+        destinationLabel.textColor = Colors.onBackground
+        destinationLabel.font = Typography.headline
         destinationLabel.adjustsFontForContentSizeCategory = true
     }
 
     private func setupDestinationTextField() {
-        destinationTextField.placeholder = "Insira o endereço"
-        destinationTextField.font = UIFont.preferredFont(forTextStyle: .title3)
-        destinationTextField.backgroundColor = .clear
         destinationTextField.delegate = self
         destinationTextField.addTarget(self, action: #selector(destinationChanged), for: .editingChanged)
     }
 
     private func setupErrorLabel() {
-        errorLabel.font = .systemFont(ofSize: 14)
-        errorLabel.textColor = .red
+        errorLabel.font = Typography.body
+        errorLabel.textColor = Colors.error
         errorLabel.isHidden = true
         errorLabel.textAlignment = .center
     }
@@ -127,19 +121,19 @@ final class EstimateViewController: WASViewController {
     private func setupStackView() {
         let originLabelsStackView = UIStackView()
         originLabelsStackView.axis = .vertical
-        originLabelsStackView.spacing = 16
+        originLabelsStackView.spacing = Spacing.medium
         originLabelsStackView.addArrangedSubview(originLabel)
         originLabelsStackView.addArrangedSubview(originTextField)
 
         let destinationLabelStackView = UIStackView()
         destinationLabelStackView.axis = .vertical
-        destinationLabelStackView.spacing = 16
+        destinationLabelStackView.spacing = Spacing.medium
         destinationLabelStackView.addArrangedSubview(destinationLabel)
         destinationLabelStackView.addArrangedSubview(destinationTextField)
 
         let mainStackView = UIStackView()
         mainStackView.axis = .vertical
-        mainStackView.spacing = 32
+        mainStackView.spacing = Spacing.extraLarge
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
         mainStackView.addArrangedSubview(originLabelsStackView)
         mainStackView.addArrangedSubview(destinationLabelStackView)
@@ -148,20 +142,13 @@ final class EstimateViewController: WASViewController {
         view.addSubview(mainStackView)
 
         NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
-            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24)
+            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Spacing.large),
+            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.large),
+            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.large)
         ])
     }
 
     private func setupActionButton() {
-        let title = "Continue"
-        var configuration = UIButton.Configuration.filled()
-        configuration.title = title
-        configuration.baseBackgroundColor = UIColor.systemPink
-        configuration.cornerStyle = .medium
-
-        actionButton.configuration = configuration
         actionButton.isEnabled = false
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         actionButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
@@ -171,7 +158,7 @@ final class EstimateViewController: WASViewController {
                 configuration?.title = ""
                 configuration?.showsActivityIndicator = true
             } else {
-                configuration?.title = title
+                configuration?.title = "Continue"
                 configuration?.showsActivityIndicator = false
             }
 
@@ -180,13 +167,12 @@ final class EstimateViewController: WASViewController {
 
         view.addSubview(actionButton)
 
-        let bottomConstraint = actionButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24)
-        self.bottomConstraint = bottomConstraint
+        let constraint = actionButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Spacing.large)
+        bottomConstraint = constraint
         NSLayoutConstraint.activate([
-            actionButton.heightAnchor.constraint(equalToConstant: 48),
-            actionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            actionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            bottomConstraint
+            actionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.large),
+            actionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.large),
+            constraint
         ])
     }
 
@@ -200,14 +186,14 @@ final class EstimateViewController: WASViewController {
         }
 
         let keyboardHeight = keyboardFrame.height
-        bottomConstraint?.constant = -(keyboardHeight + 24)
+        bottomConstraint?.constant = -(keyboardHeight + Spacing.large)
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.view.layoutIfNeeded()
         }
     }
 
     @objc func keyboardWillHide(notification: Notification) {
-        bottomConstraint?.constant = -24
+        bottomConstraint?.constant = -Spacing.large
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.view.layoutIfNeeded()
         }
