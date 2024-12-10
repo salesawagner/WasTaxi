@@ -54,6 +54,7 @@
 		A7F567492D07E35B000CCA9F /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F567482D07E347000CCA9F /* StringExtensionTests.swift */; };
 		A7F5674B2D07E617000CCA9F /* DoubleExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F5674A2D07E60F000CCA9F /* DoubleExtensionsTests.swift */; };
 		A7F5674D2D07E8AC000CCA9F /* GeoLocationResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F5674C2D07E8A9000CCA9F /* GeoLocationResponseTests.swift */; };
+		A7F5674F2D07F2C0000CCA9F /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F5674E2D07F2BE000CCA9F /* Driver.swift */; };
 		B030879FF5D6E5ED4AC21158 /* Pods_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2338FAF6339A40BB0E103E79 /* Pods_challenge.framework */; };
 		B346C0E71966480D43BB333A /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B580344F1CA5966A390547A /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -120,6 +121,7 @@
 		A7F567482D07E347000CCA9F /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		A7F5674A2D07E60F000CCA9F /* DoubleExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensionsTests.swift; sourceTree = "<group>"; };
 		A7F5674C2D07E8A9000CCA9F /* GeoLocationResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationResponseTests.swift; sourceTree = "<group>"; };
+		A7F5674E2D07F2BE000CCA9F /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		B05FC68FFF0CF66EAD8B2A6D /* WASViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WASViewController.swift; sourceTree = "<group>"; };
 		C2329FC97F4186A093519894 /* challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = challengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBE801742AEE2AF79ABD88B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 		79E70874E1E11AF96DB6DF78 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				A7F5674E2D07F2BE000CCA9F /* Driver.swift */,
 				37C31550BB701C320CC410A6 /* DependencyContainer.swift */,
 				684AE9AB8A3BAFEB18E40B06 /* Environment.swift */,
 				DCD85FBBC34D10055E3EAD69 /* WASFeedbackView.swift */,
@@ -559,6 +562,7 @@
 				A7F53F252D037894008B72FB /* ListRow.swift in Sources */,
 				A7F53F262D037894008B72FB /* ListViewController.swift in Sources */,
 				A7F53F272D037894008B72FB /* ConfirmCell.swift in Sources */,
+				A7F5674F2D07F2C0000CCA9F /* Driver.swift in Sources */,
 				A75F57882D0675E300569AF7 /* ConfirmViewModelProtocol.swift in Sources */,
 				A7F53F282D037894008B72FB /* ListViewModel.swift in Sources */,
 				A75F578C2D067F8E00569AF7 /* GeoLocationResponseExtensions.swift in Sources */,

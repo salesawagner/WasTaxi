@@ -86,7 +86,14 @@ final class ConfirmViewModel: ConfirmViewModelProtocol {
     // MARK: Internal Methods
 
     func didSelectDriver(index: Int) {
-        requestConfirm(index: index)
+        let estimateDistance = Double(estimate.distance)
+        let distance = Driver.drivers.first { $0.id == estimate.drivers[index].id }.map { $0.minimumDistance } ?? 0
+
+        if estimateDistance >= distance {
+            requestConfirm(index: index)
+        } else {
+            state = .failure("Esse motorista só aceita corrida maior que \(distance.toKM)")
+        }
     }
 
     func numberOfRows() -> Int {
