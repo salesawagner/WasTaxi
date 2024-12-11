@@ -67,7 +67,7 @@ final class EstimateViewController: WASViewController {
 
     override func setupUI() {
         super.setupUI()
-        title = "search_driver".localized
+        title = "search_drivers".localized
         setupLabels()
         setupTextFields()
         setupStackView()
@@ -81,7 +81,7 @@ final class EstimateViewController: WASViewController {
     // MARK: Setups
 
     private func setupLabels() {
-        userLabel.configure(text: "search_driver".localized, font: Typography.headline, textColor: Colors.onBackground)
+        userLabel.configure(text: "which_user".localized, font: Typography.headline, textColor: Colors.onBackground)
         originLabel.configure(text: "which_origin".localized, font: Typography.headline, textColor: Colors.onBackground)
         destinationLabel.configure(
             text: "which_destination".localized,

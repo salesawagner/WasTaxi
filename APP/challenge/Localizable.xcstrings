@@ -89,7 +89,7 @@
         }
       }
     },
-    "search_drives" : {
+    "search_drivers" : {
       "extractionState" : "manual",
       "localizations" : {
         "pt-BR" : {
