@@ -16,10 +16,7 @@ Caso encontre alguma dificuldade, consulte a seção **Início Rápido** abaixo,
 
 ---
 
-![Swift](https://img.shields.io/badge/Swift-5.0-orange)  
-![Platforms](https://img.shields.io/badge/Platforms-iOS-yellowgreen)  
-![Xcode Version](https://img.shields.io/badge/Xcode-16-blue)  
-![iOS Version](https://img.shields.io/badge/iOS-17.0-blue)  
+![Swift](https://img.shields.io/badge/Swift-5.0-orange) ![Platforms](https://img.shields.io/badge/Platforms-iOS-yellowgreen)   ![Xcode Version](https://img.shields.io/badge/Xcode-16-blue)  ![iOS Version](https://img.shields.io/badge/iOS-17.0-blue)  
 
 ---
 
