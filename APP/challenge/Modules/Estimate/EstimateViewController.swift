@@ -60,14 +60,6 @@ final class EstimateViewController: WASViewController {
         }
     }
 
-    override func viewDidAppear(_ animated: Bool) { // FIXME: Remover
-        super.viewDidAppear(animated)
-        viewModel.setCustomId("CT01")
-        viewModel.setOrigin("Av. Pres. Kenedy, 2385 - Remédios, Osasco - SP, 02675-031")
-        viewModel.setDestination("Av. Paulista, 1538 - Bela Vista, São Paulo - SP, 01310-200")
-        actionButton.isEnabled = true
-    }
-
     override func showLoading(_ isLoading: Bool) {
         self.isLoading = isLoading
         actionButton.setNeedsUpdateConfiguration()
