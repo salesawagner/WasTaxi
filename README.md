@@ -40,25 +40,6 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 ## Início Rápido 🚀
 
-### Configuração da API
-
-A pasta **API** contém os arquivos relacionados ao tratamento de requisições e respostas do aplicativo.  
-
-#### Passos para configuração:
-1. Navegue até a pasta `API`:
-    ```bash
-    cd API
-    ```
-2. Execute os seguintes comandos no terminal:
-    ```bash
-    xcodegen generate
-    pod install
-    ```
-3. Abra o workspace gerado:  
-   [API.xcworkspace](API/API.xcworkspace)
-
----
-
 ### Configuração do APP
 
 A pasta **APP** contém os arquivos responsáveis pela interface do usuário.  
@@ -75,6 +56,25 @@ A pasta **APP** contém os arquivos responsáveis pela interface do usuário.
     ```
 3. Abra o workspace gerado:  
    [challenge.xcworkspace](APP/challenge.xcworkspace)
+
+---
+
+### Configuração do SDK API
+
+A pasta **API** contém os arquivos relacionados ao tratamento de requisições e respostas do aplicativo.  
+
+#### Passos para configuração:
+1. Navegue até a pasta `API`:
+    ```bash
+    cd API
+    ```
+2. Execute os seguintes comandos no terminal:
+    ```bash
+    xcodegen generate
+    pod install
+    ```
+3. Abra o workspace gerado:  
+   [API.xcworkspace](API/API.xcworkspace)
 
 ---
 
