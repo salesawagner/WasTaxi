@@ -1,38 +1,83 @@
-Fala reviwer, tudo bem? Aqui está o projeto para o desafio. Para setup e gerenciamento do projeto eu utilizei algumas ferramentas como o `XcodeGen`, `Cocopods` e `Swiftlint` para facilitar no desenvolvimento, evitar conflitos e código mais limpo(lint). Optei por não colocar os arquivos de projeto(`.xcworkspace`, `.xcodeproj` etc...) e pods no `.gitignore` propositalmente para facilitar a execução dos projetos pra vcs. ;) 
+# Desafio iOS 🚀
 
-Se houver alguma dificuldade para executor os projetos, na guia **START** tem o passo a passo de como fazer o setup dos projetos. 
+Olá, reviewer! Tudo certo? Este é o projeto desenvolvido para o desafio. Abaixo, você encontrará detalhes sobre o setup e gerenciamento utilizados no desenvolvimento, além de instruções para facilitar a execução.
 
-![Swift](https://img.shields.io/badge/Swift-5.0-orange)
-![Platforms](https://img.shields.io/badge/Platforms-iOS-yellowgreen)
-![Xcode Version](https://img.shields.io/badge/Xcode-16-blue)
-![iOS Version](https://img.shields.io/badge/iOS-17.0-blue)
+## Ferramentas Utilizadas
 
-# Requerimentos
-- **XcodeGen** ([https://github.com/yonaskolb/XcodeGen](https://github.com/yonaskolb/XcodeGen))</br>
-Utilizei o XcodeGen para evitar conflitos com os arquivos `.xcodeproj`
+Para organizar e simplificar o desenvolvimento, empreguei as seguintes ferramentas:
 
-- **Cocoapods** ([https://cocoapods.org](https://cocoapods.org))</br>
-Utilizado para gerenciamento de dependencias
+- **XcodeGen**: Geração automatizada do arquivo `.xcodeproj` para evitar conflitos de versão.
+- **Cocoapods**: Gerenciamento de dependências do projeto.
+- **SwiftLint**: Garantia de código mais limpo e padronizado.
 
-- **Swiftlint** ([https://github.com/realm/SwiftLint](https://github.com/realm/SwiftLint))
+**Nota:** Optei por não adicionar os arquivos de projeto (`.xcworkspace`, `.xcodeproj`, etc.) e os Pods ao `.gitignore`. Isso foi feito propositalmente para facilitar a execução do projeto por vocês. 😉
 
-# Start
-### - API  
-Responsável pelas tratativas de request e response do APP: [API.xcworkspace](API/API.xcworkspace). Para fazer o setup basta ir na pasta [API](API/) e rodar os comandos no terminal:
+Caso encontre alguma dificuldade, consulte a seção **Início Rápido** abaixo, onde detalho o passo a passo para configurar o projeto.
 
-```
-$  xcodegen generate
-$  pod install
-```
+---
 
-Abrir o arquivo: [API.xcworkspace](API/API.xcworkspace)
+![Swift](https://img.shields.io/badge/Swift-5.0-orange)  
+![Platforms](https://img.shields.io/badge/Platforms-iOS-yellowgreen)  
+![Xcode Version](https://img.shields.io/badge/Xcode-16-blue)  
+![iOS Version](https://img.shields.io/badge/iOS-17.0-blue)  
 
-### - APP  
-Responsável pela aplicação UI: [challange.xcworkspace](APP/challange.xcworkspace). Para fazer o setup basta ir na pasta [APP](APP/) e rodar os comandos no terminal:
+---
 
-```
-$  xcodegen generate
-$  pod install
-```
+## Requisitos
 
-Abrir o arquivo: [challenge.xcworkspace](APP/challenge.xcworkspace)
+Certifique-se de ter as seguintes ferramentas instaladas:
+
+- **[XcodeGen](https://github.com/yonaskolb/XcodeGen)**  
+  Utilizado para evitar conflitos com o arquivo `.xcodeproj`.  
+
+- **[Cocoapods](https://cocoapods.org)**  
+  Ferramenta para gerenciamento de dependências.  
+
+- **[SwiftLint](https://github.com/realm/SwiftLint)**  
+  Ferramenta para análise e padronização de código.  
+
+---
+
+## Início Rápido 🚀
+
+### Configuração da API
+
+A pasta **API** contém os arquivos relacionados ao tratamento de requisições e respostas do aplicativo.  
+
+#### Passos para configuração:
+1. Navegue até a pasta `API`:
+    ```bash
+    cd API
+    ```
+2. Execute os seguintes comandos no terminal:
+    ```bash
+    xcodegen generate
+    pod install
+    ```
+3. Abra o workspace gerado:  
+   [API.xcworkspace](API/API.xcworkspace)
+
+---
+
+### Configuração do APP
+
+A pasta **APP** contém os arquivos responsáveis pela interface do usuário.  
+
+#### Passos para configuração:
+1. Navegue até a pasta `APP`:
+    ```bash
+    cd APP
+    ```
+2. Execute os seguintes comandos no terminal:
+    ```bash
+    xcodegen generate
+    pod install
+    ```
+3. Abra o workspace gerado:  
+   [challenge.xcworkspace](APP/challenge.xcworkspace)
+
+---
+
+Se precisar de qualquer ajuda ou esclarecimento, não hesite em entrar em contato! 😊
+
+📧 **Email**: salesawagner@gmail.com
