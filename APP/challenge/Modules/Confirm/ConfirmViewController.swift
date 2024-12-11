@@ -156,11 +156,9 @@ final class ConfirmViewController: WASViewController {
         case .success(let customerId, let driverId):
             showLoading(false)
             showContentView(true)
-            showAlert(title: "Sucesso", message: "Corrida solicitada com sucesso") { [weak self] in
-                let viewModel = RidesViewModel(customerId: customerId, driverId: driverId)
-                let viewController = RidesViewController(viewModel: viewModel)
-                self?.navigationController?.pushViewController(viewController, animated: true)
-            }
+            let viewModel = RidesViewModel(customerId: customerId, driverId: driverId)
+            let viewController = RidesViewController(viewModel: viewModel)
+            navigationController?.pushViewController(viewController, animated: true)
 
         case .failure(let error):
             showLoading(false)

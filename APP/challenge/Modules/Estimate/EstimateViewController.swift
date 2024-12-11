@@ -233,18 +233,18 @@ final class EstimateViewController: WASViewController {
     // MARK: Internal Methods
 
     @objc func userChanged() {
-        enableActionButton()
         viewModel.setCustomId(userTextField.text)
+        enableActionButton()
     }
 
     @objc func originChanged() {
-        enableActionButton()
         viewModel.setOrigin(originTextField.text)
+        enableActionButton()
     }
 
     @objc func destinationChanged() {
-        enableActionButton()
         viewModel.setDestination(destinationTextField.text)
+        enableActionButton()
     }
 
     @objc func didTapActionButton() {
