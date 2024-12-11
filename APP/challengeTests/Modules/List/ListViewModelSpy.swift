@@ -7,19 +7,19 @@
 
 @testable import challenge
 
-final class ListViewModelSpy: ListViewModelProtocol {
+final class ListViewModelSpy: RidesViewModelProtocol {
     var receivedMessages: [Message] = []
 
-    private(set) var state: challenge.ListState = .idle
-    var didChangeState: ((challenge.ListState) -> Void)?
-    private var mockRows: [ListRow] = []
+    private(set) var state: challenge.RidesState = .idle
+    var didChangeState: ((challenge.RidesState) -> Void)?
+    private var mockRows: [RidesRow] = []
 
     func numberOfRows() -> Int {
         receivedMessages.append(.numberOfRows)
         return 0
     }
 
-    func row(at index: Int) -> challenge.ListRow? {
+    func row(at index: Int) -> challenge.RidesRow? {
         receivedMessages.append(.row)
         return nil
     }

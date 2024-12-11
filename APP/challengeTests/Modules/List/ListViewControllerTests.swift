@@ -9,13 +9,13 @@ import XCTest
 @testable import challenge
 
 class ListViewControllerTests: XCTestCase {
-    var sut: ListViewController!
+    var sut: RidesViewController!
     var spy: ListViewModelSpy!
 
     override func setUp() {
         super.setUp()
         spy = ListViewModelSpy()
-        sut = ListViewController(viewModel: spy)
+        sut = RidesViewController(viewModel: spy)
         sut.loadViewIfNeeded()
     }
 

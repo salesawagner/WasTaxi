@@ -1,5 +1,5 @@
 //
-//  ListViewModel.swift
+//  RidesViewModel.swift
 //  challenge
 //
 //  Created by Wagner Sales
@@ -7,23 +7,23 @@
 
 import API
 
-enum ListState {
+enum RidesState {
     case idle
     case loading
-    case success([ListRow])
+    case success([RidesRow])
     case failure(WASFeedbackViewDTO)
 }
 
-final class ListViewModel {
+final class RidesViewModel {
     // MARK: Properties
 
-    private(set) var state: ListState = .idle {
+    private(set) var state: RidesState = .idle {
         didSet {
             self.didChangeState?(state)
         }
     }
 
-    var didChangeState: ((ListState) -> Void)?
+    var didChangeState: ((RidesState) -> Void)?
 
     private var api: APIClient
     private var customerId: String
@@ -47,21 +47,28 @@ final class ListViewModel {
                 DispatchQueue.main.async {
                     if response.rides.isEmpty {
                         self?.state = .failure(.init(
-                            title: "Nenhum resultado encontrado!",
-                            actionButtonTitle: "Tentar novamente",
+                            title: "no_rides".localized,
+                            actionButtonTitle: "try_again".localized,
                             action: { [weak self] in
                             self?.didTapReload()
                         }))
                     } else {
-                        self?.state = .success(response.rides.toRows)
+                        self?.state = .success(response.toRows)
                     }
                 }
 
-            case .failure:
+            case .failure(let error):
                 DispatchQueue.main.async {
+                    var title = ""
+                    if case .error(let error) = error {
+                        title = error.description
+                    } else {
+                        title = "generic_error".localized
+                    }
+
                     self?.state = .failure(.init(
-                        title: "Ocorreu um erro, tente novamente!",
-                        actionButtonTitle: "Tentar novamente",
+                        title: title,
+                        actionButtonTitle: "try_again".localized,
                         action: { [weak self] in
                         self?.didTapReload()
                     }))
@@ -73,13 +80,13 @@ final class ListViewModel {
 
 // MARK: - ListInputProtocol
 
-extension ListViewModel: ListViewModelProtocol {
+extension RidesViewModel: RidesViewModelProtocol {
     func numberOfRows() -> Int {
         guard case .success(let rows) = state else { return 0 }
         return rows.count
     }
 
-    func row(at index: Int) -> ListRow? {
+    func row(at index: Int) -> RidesRow? {
         guard case .success(let rows) = state else { return nil }
         return rows[index]
     }
@@ -97,13 +104,14 @@ extension ListViewModel: ListViewModelProtocol {
     }
 }
 
-// MARK: - ListResponse Helper
+// MARK: - RidesResponse Helper
 
-private extension Array where Element == RideResponse {
-    var toRows: [ListRow] {
-        var rows: [ListRow] = []
-        forEach {
+private extension RidesResponse {
+    var toRows: [RidesRow] {
+        var rows: [RidesRow] = []
+        rides.forEach {
             rows.append(.init(
+                customerId: customerId,
                 driver: $0.driver.name,
                 date: $0.date.toDateFormatted ?? "-",
                 origin: $0.origin,

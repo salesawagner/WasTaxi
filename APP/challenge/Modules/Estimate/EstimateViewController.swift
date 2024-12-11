@@ -6,16 +6,19 @@
 //
 
 import UIKit
+import API
 
 final class EstimateViewController: WASViewController {
     // MARK: Properties
 
     var viewModel: EstimateViewModelProtocol
 
+    let userLabel = UILabel()
+    let userTextField = TextFields.primary(placeholder: "insert_user".localized)
     let originLabel = UILabel()
-    let originTextField = TextFields.primary(placeholder: "Insira o endereço")
+    let originTextField = TextFields.primary(placeholder: "insert_address".localized)
     let destinationLabel = UILabel()
-    let destinationTextField = TextFields.primary(placeholder: "Insira o endereço")
+    let destinationTextField = TextFields.primary(placeholder: "insert_address".localized)
     let errorLabel = UILabel()
     let actionButton = Buttons.primary()
     var isLoading: Bool = false
@@ -59,8 +62,9 @@ final class EstimateViewController: WASViewController {
 
     override func viewDidAppear(_ animated: Bool) { // FIXME: Remover
         super.viewDidAppear(animated)
-        viewModel.origin = "Av. Pres. Kenedy, 2385 - Remédios, Osasco - SP, 02675-031"
-        viewModel.destination = "Av. Paulista, 1538 - Bela Vista, São Paulo - SP, 01310-200"
+        viewModel.setCustomId("CT01")
+        viewModel.setOrigin("Av. Pres. Kenedy, 2385 - Remédios, Osasco - SP, 02675-031")
+        viewModel.setDestination("Av. Paulista, 1538 - Bela Vista, São Paulo - SP, 01310-200")
         actionButton.isEnabled = true
     }
 
@@ -71,12 +75,9 @@ final class EstimateViewController: WASViewController {
 
     override func setupUI() {
         super.setupUI()
-        title = "Buscar Motoristas"
-        setupOriginLabel()
-        setupOriginTextField()
-        setupDestinationLabel()
-        setupDestinationTextField()
-        setupErrorLabel()
+        title = "search_driver".localized
+        setupLabels()
+        setupTextFields()
         setupStackView()
         setupActionButton()
     }
@@ -87,58 +88,37 @@ final class EstimateViewController: WASViewController {
 
     // MARK: Setups
 
-    private func setupOriginLabel() {
-        originLabel.text = "Qual Origem?"
-        originLabel.textColor = Colors.onBackground
-        originLabel.font = Typography.headline
-        originLabel.adjustsFontForContentSizeCategory = true
-    }
+    private func setupLabels() {
+        userLabel.configure(text: "search_driver".localized, font: Typography.headline, textColor: Colors.onBackground)
+        originLabel.configure(text: "which_origin".localized, font: Typography.headline, textColor: Colors.onBackground)
+        destinationLabel.configure(
+            text: "which_destination".localized,
+            font: Typography.headline,
+            textColor: Colors.onBackground
+        )
 
-    private func setupOriginTextField() {
-        originTextField.delegate = self
-        originTextField.addTarget(self, action: #selector(originChanged), for: .editingChanged)
-    }
-
-    private func setupDestinationLabel() {
-        destinationLabel.text = "Qual Destino?"
-        destinationLabel.textColor = Colors.onBackground
-        destinationLabel.font = Typography.headline
-        destinationLabel.adjustsFontForContentSizeCategory = true
-    }
-
-    private func setupDestinationTextField() {
-        destinationTextField.delegate = self
-        destinationTextField.addTarget(self, action: #selector(destinationChanged), for: .editingChanged)
-    }
-
-    private func setupErrorLabel() {
-        errorLabel.font = Typography.body
-        errorLabel.textColor = Colors.error
+        errorLabel.configure(font: Typography.body, textColor: Colors.error)
         errorLabel.isHidden = true
         errorLabel.textAlignment = .center
     }
 
+    private func setupTextFields() {
+        configureTextField(userTextField, action: #selector(userChanged))
+        configureTextField(originTextField, action: #selector(originChanged))
+        configureTextField(destinationTextField, action: #selector(destinationChanged))
+    }
+
     private func setupStackView() {
-        let originLabelsStackView = UIStackView()
-        originLabelsStackView.axis = .vertical
-        originLabelsStackView.spacing = Spacing.medium
-        originLabelsStackView.addArrangedSubview(originLabel)
-        originLabelsStackView.addArrangedSubview(originTextField)
+        let userStackView = createFieldStackView(label: userLabel, textfield: userTextField)
+        let originStackView = createFieldStackView(label: originLabel, textfield: originTextField)
+        let destinationStackView = createFieldStackView(label: destinationLabel, textfield: destinationTextField)
 
-        let destinationLabelStackView = UIStackView()
-        destinationLabelStackView.axis = .vertical
-        destinationLabelStackView.spacing = Spacing.medium
-        destinationLabelStackView.addArrangedSubview(destinationLabel)
-        destinationLabelStackView.addArrangedSubview(destinationTextField)
-
-        let mainStackView = UIStackView()
-        mainStackView.axis = .vertical
-        mainStackView.spacing = Spacing.extraLarge
+        let mainStackView = createStackView(
+            arrangedSubviews: [userStackView, originStackView, destinationStackView, errorLabel],
+            spacing: Spacing.extraLarge,
+            axis: .vertical
+        )
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
-        mainStackView.addArrangedSubview(originLabelsStackView)
-        mainStackView.addArrangedSubview(destinationLabelStackView)
-        mainStackView.addArrangedSubview(errorLabel)
-
         view.addSubview(mainStackView)
 
         NSLayoutConstraint.activate([
@@ -158,7 +138,7 @@ final class EstimateViewController: WASViewController {
                 configuration?.title = ""
                 configuration?.showsActivityIndicator = true
             } else {
-                configuration?.title = "Continue"
+                configuration?.title = "continue_button".localized
                 configuration?.showsActivityIndicator = false
             }
 
@@ -178,7 +158,28 @@ final class EstimateViewController: WASViewController {
 
     // MARK: Private Methods
 
-    @objc func keyboardWillShow(notification: Notification) {
+    private func configureTextField(_ textField: UITextField, action: Selector) {
+        textField.delegate = self
+        textField.addTarget(self, action: action, for: .editingChanged)
+    }
+
+    private func createStackView(
+        arrangedSubviews: [UIView],
+        spacing: CGFloat,
+        axis: NSLayoutConstraint.Axis)
+    -> UIStackView {
+        let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
+        stackView.spacing = spacing
+        stackView.axis = axis
+
+        return stackView
+    }
+
+    private func createFieldStackView(label: UILabel, textfield: UITextField) -> UIStackView {
+        createStackView(arrangedSubviews: [label, textfield], spacing: Spacing.medium, axis: .vertical)
+    }
+
+    @objc private func keyboardWillShow(notification: Notification) {
         guard
             let userInfo = notification.userInfo,
             let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
@@ -192,32 +193,67 @@ final class EstimateViewController: WASViewController {
         }
     }
 
-    @objc func keyboardWillHide(notification: Notification) {
+    @objc private func keyboardWillHide(notification: Notification) {
         bottomConstraint?.constant = -Spacing.large
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.view.layoutIfNeeded()
         }
     }
 
-    @objc private func originChanged() {
-        enableActionButton()
-        viewModel.origin = originTextField.text ?? ""
-    }
-
-    @objc private func destinationChanged() {
-        enableActionButton()
-        viewModel.destination = destinationTextField.text ?? ""
-    }
-
     private func enableActionButton() {
-        actionButton.isEnabled = originTextField.text?.isEmpty == false && destinationTextField.text?.isEmpty == false
+        let isEnabled = [viewModel.customerId, viewModel.origin, viewModel.destination].allSatisfy { $0 != nil }
+        actionButton.isEnabled = isEnabled
     }
 
     private func showError(_ isShowing: Bool) {
         errorLabel.isHidden = !isShowing
     }
 
+    private func handleIdleState() {
+        showLoading(false)
+        showError(false)
+    }
+
+    private func handleLoadingState() {
+        showLoading(true)
+        showError(false)
+    }
+
+    private func handleSuccessState(_ estimate: EstimateResponse) {
+        showLoading(false)
+        showError(false)
+        let viewModel = ConfirmViewModel(
+            origin: viewModel.origin,
+            destination: viewModel.destination,
+            estimate: estimate,
+            customerId: viewModel.customerId
+        )
+        let viewController = ConfirmViewController(viewModel: viewModel)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    private func handleErrorState(_ text: String) {
+        showLoading(false)
+        showError(true)
+        errorLabel.text = text
+    }
+
     // MARK: Internal Methods
+
+    @objc func userChanged() {
+        enableActionButton()
+        viewModel.setCustomId(userTextField.text)
+    }
+
+    @objc func originChanged() {
+        enableActionButton()
+        viewModel.setOrigin(originTextField.text)
+    }
+
+    @objc func destinationChanged() {
+        enableActionButton()
+        viewModel.setDestination(destinationTextField.text)
+    }
 
     @objc func didTapActionButton() {
         viewModel.didTapActionButton()
@@ -226,30 +262,10 @@ final class EstimateViewController: WASViewController {
 
     func handleStateChange(_ state: EstimateState) {
         switch state {
-        case .idle:
-            showLoading(false)
-            showError(false)
-
-        case .loading:
-            showLoading(true)
-            showError(false)
-
-        case .success(let estimate):
-            showLoading(false)
-            showError(false)
-            let viewModel = ConfirmViewModel(
-                origin: viewModel.origin,
-                destination: viewModel.destination,
-                estimate: estimate,
-                customerId: viewModel.customerId
-            )
-            let viewController = ConfirmViewController(viewModel: viewModel)
-            navigationController?.pushViewController(viewController, animated: true)
-
-        case .failure(let error):
-            showLoading(false)
-            errorLabel.text = error
-            showError(true)
+        case .idle: handleIdleState()
+        case .loading: handleLoadingState()
+        case .success(let estimate): handleSuccessState(estimate)
+        case .failure(let error): handleErrorState(error)
         }
     }
 }

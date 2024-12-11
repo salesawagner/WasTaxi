@@ -16,7 +16,7 @@ final class EstimateViewModelTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockService = WASAPIMock()
-        viewModel = EstimateViewModel(api: mockService, customerId: "")
+        viewModel = EstimateViewModel(api: mockService)
     }
 
     override func tearDown() {

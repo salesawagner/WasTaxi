@@ -1,14 +1,14 @@
 public struct RidesResponse: Codable {
-    public let customerID: String
+    public let customerId: String
     public let rides: [RideResponse]
 
     enum CodingKeys: String, CodingKey {
-        case customerID = "customer_id"
+        case customerId = "customer_id"
         case rides
     }
 
-    public init(customerID: String, rides: [RideResponse]) {
-        self.customerID = customerID
+    public init(customerId: String, rides: [RideResponse]) {
+        self.customerId = customerId
         self.rides = rides
     }
 }

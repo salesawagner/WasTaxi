@@ -25,7 +25,22 @@ class EstimateViewControllerTests: XCTestCase {
         super.tearDown()
     }
 
-    func testViewDidTapActionButton_CallsViewModelDidTapActionButton() {
+    func testUserChanged_CallsViewModelDidTapActionButton() {
+        sut.userChanged()
+        XCTAssertTrue(spy.receivedMessages.contains(.setCustomId))
+    }
+
+    func testOriginChanged_CallsViewModelDidTapActionButton() {
+        sut.originChanged()
+        XCTAssertTrue(spy.receivedMessages.contains(.setOrigin))
+    }
+
+    func testDestinationChanged_CallsViewModelDidTapActionButton() {
+        sut.destinationChanged()
+        XCTAssertTrue(spy.receivedMessages.contains(.setDestination))
+    }
+
+    func testDidTapActionButton_CallsViewModelDidTapActionButton() {
         sut.didTapActionButton()
         XCTAssertTrue(spy.receivedMessages.contains(.didTapActionButton))
     }

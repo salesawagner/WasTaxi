@@ -35,16 +35,16 @@ final class ConfirmViewModel: ConfirmViewModelProtocol {
 
     init(
         api: APIClient = DependencyContainer.apiClient,
-        origin: String,
-        destination: String,
+        origin: String?,
+        destination: String?,
         estimate: EstimateResponse,
-        customerId: String
+        customerId: String?
     ) {
         self.api = api
-        self.origin = origin
-        self.destination = destination
+        self.origin = origin ?? ""
+        self.destination = destination ?? ""
         self.estimate = estimate
-        self.customerId = customerId
+        self.customerId = customerId ?? ""
     }
 
     // MARK: Private Methods
@@ -67,7 +67,7 @@ final class ConfirmViewModel: ConfirmViewModelProtocol {
                     if response.success {
                         self?.state = .success(customerId: self?.customerId ?? "", driverId: "\(driver.id)")
                     } else {
-                        self?.state = .failure("Ocorreu um erro, tente novamente!")
+                        self?.state = .failure("generic_error".localized)
                     }
                 }
 
@@ -76,24 +76,28 @@ final class ConfirmViewModel: ConfirmViewModelProtocol {
                     if case .error(let error) = error {
                         self?.state = .failure(error.description)
                     } else {
-                        self?.state = .failure("Ocorreu um erro, tente novamente!")
+                        self?.state = .failure("generic_error".localized)
                     }
                 }
             }
         }
     }
 
+    private func isDriverEligible(index: Int) -> Bool {
+        let estimateDistance = Double(estimate.distance)
+        let minimumDistance = Driver.drivers.first { $0.id == estimate.drivers[index].id }?.minimumDistance ?? 0
+        return estimateDistance >= minimumDistance
+    }
+
     // MARK: Internal Methods
 
     func didSelectDriver(index: Int) {
-        let estimateDistance = Double(estimate.distance)
-        let distance = Driver.drivers.first { $0.id == estimate.drivers[index].id }.map { $0.minimumDistance } ?? 0
-
-        if estimateDistance >= distance {
-            requestConfirm(index: index)
-        } else {
-            state = .failure("Esse motorista só aceita corrida maior que \(distance.toKM)")
+        guard isDriverEligible(index: index) else {
+            state = .failure("driver_eligible".localized)
+            return
         }
+
+        requestConfirm(index: index)
     }
 
     func numberOfRows() -> Int {

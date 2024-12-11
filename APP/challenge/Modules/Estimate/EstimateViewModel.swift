@@ -16,6 +16,7 @@ enum EstimateState {
 
 final class EstimateViewModel: EstimateViewModelProtocol {
     // MARK: Properties
+
     private(set) var state: EstimateState = .idle {
         didSet {
             self.didChangeState?(state)
@@ -25,16 +26,15 @@ final class EstimateViewModel: EstimateViewModelProtocol {
     var didChangeState: ((EstimateState) -> Void)?
 
     private var api: APIClient
-    private(set) var customerId: String
 
-    var origin: String = ""
-    var destination: String = ""
+    var customerId: String?
+    var origin: String?
+    var destination: String?
 
     // MARK: Inits
 
-    init(api: APIClient = DependencyContainer.apiClient, customerId: String) {
+    init(api: APIClient = DependencyContainer.apiClient) {
         self.api = api
-        self.customerId = customerId
     }
 
     // MARK: Private Methods
@@ -46,7 +46,7 @@ final class EstimateViewModel: EstimateViewModelProtocol {
             case .success(let response):
                 DispatchQueue.main.async {
                     if response.drivers.isEmpty {
-                        self?.state = .failure("Nenhum motorista encontrado")
+                        self?.state = .failure("no_driver".localized)
                     } else {
                         self?.state = .success(response)
                     }
@@ -56,7 +56,7 @@ final class EstimateViewModel: EstimateViewModelProtocol {
                     if case .error(let error) = error {
                         self?.state = .failure(error.description)
                     } else {
-                        self?.state = .failure("Ocorreu um erro, tente novamente!")
+                        self?.state = .failure("generic_error".localized)
                     }
                 }
             }
@@ -67,5 +67,17 @@ final class EstimateViewModel: EstimateViewModelProtocol {
 
     func didTapActionButton() {
         requestEstimate()
+    }
+
+    func setCustomId(_ text: String?) {
+        customerId = (text?.isEmpty ?? true) ? nil : text
+    }
+
+    func setOrigin(_ text: String?) {
+        origin = (text?.isEmpty ?? true) ? nil : text
+    }
+
+    func setDestination(_ text: String?) {
+        destination = (text?.isEmpty ?? true) ? nil : text
     }
 }

@@ -9,6 +9,10 @@ import Foundation
 import CoreLocation
 
 extension String {
+    var localized: String {
+        return NSLocalizedString(self, tableName: nil, bundle: .main, value: "", comment: "")
+    }
+
     var toDate: Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"

@@ -1,5 +1,5 @@
 //
-//  ListViewController.swift
+//  RidesViewController.swift
 //  challenge
 //
 //  Created by Wagner Sales
@@ -7,16 +7,16 @@
 
 import UIKit
 
-final class ListViewController: WASViewController {
+final class RidesViewController: WASViewController {
     // MARK: Properties
 
-    private var viewModel: ListViewModelProtocol
+    private var viewModel: RidesViewModelProtocol
     let refreshControl = UIRefreshControl()
     let tableView = UITableView(frame: .zero, style: .plain)
 
     // MARK: Constructors
 
-    init(viewModel: ListViewModelProtocol) {
+    init(viewModel: RidesViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -40,7 +40,7 @@ final class ListViewController: WASViewController {
 
     override func setupUI() {
         super.setupUI()
-        title = "Histórico"
+        title = "history".localized
         addBackButton()
         setupRefreshControl()
         setupTableView()
@@ -64,7 +64,7 @@ final class ListViewController: WASViewController {
         tableView.showsHorizontalScrollIndicator = false
 
         tableView.dataSource = self
-        tableView.register(ListCell.self, forCellReuseIdentifier: ListCell.identifier)
+        tableView.register(RidesCell.self, forCellReuseIdentifier: RidesCell.identifier)
 
         tableView.fill(on: view)
     }
@@ -74,30 +74,39 @@ final class ListViewController: WASViewController {
         tableView.addSubview(refreshControl)
     }
 
+    private func handleIdleState() {
+        showLoading(false)
+        tableView.isHidden = false
+    }
+
+    private func handleLoadingState() {
+        showLoading(true)
+        showFeedbackView(false)
+        tableView.isHidden = true
+    }
+
+    private func handleSuccessState() {
+        showLoading(false)
+        showFeedbackView(false)
+        tableView.isHidden = false
+        tableView.reloadData()
+    }
+
+    private func handleErrorState(_ dto: WASFeedbackViewDTO) {
+        showLoading(false)
+        showFeedbackView(true)
+        tableView.isHidden = true
+        feedbackView.configure(dto)
+    }
+
     // MARK: Internal Methods
 
-    func handleStateChange(_ state: ListState) {
+    func handleStateChange(_ state: RidesState) {
         switch state {
-        case .idle:
-            showLoading(false)
-            tableView.isHidden = false
-
-        case .loading:
-            showLoading(true)
-            showFeedbackView(false)
-            tableView.isHidden = true
-
-        case .success:
-            showLoading(false)
-            showFeedbackView(false)
-            tableView.isHidden = false
-            tableView.reloadData()
-
-        case .failure(let dto):
-            showLoading(false)
-            showFeedbackView(true)
-            tableView.isHidden = true
-            feedbackView.configure(dto)
+        case .idle: handleIdleState()
+        case .loading: handleLoadingState()
+        case .success: handleSuccessState()
+        case .failure(let dto): handleErrorState(dto)
         }
     }
 
@@ -112,13 +121,13 @@ final class ListViewController: WASViewController {
 
 // MARK: - UITableViewDataSource
 
-extension ListViewController: UITableViewDataSource {
+extension RidesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.numberOfRows()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ListCell.identifier) as? ListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: RidesCell.identifier) as? RidesCell
         if let row = viewModel.row(at: indexPath.row) {
             cell?.setup(with: row)
         }

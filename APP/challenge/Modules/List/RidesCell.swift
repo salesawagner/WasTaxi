@@ -1,5 +1,5 @@
 //
-//  ListCell.swift
+//  RidesCell.swift
 //  challenge
 //
 //  Created by Wagner Sales
@@ -7,11 +7,12 @@
 
 import UIKit
 
-final class ListCell: UITableViewCell {
-    static var identifier = String(describing: ListCell.self)
+final class RidesCell: UITableViewCell {
+    static var identifier = String(describing: RidesCell.self)
 
     // MARK: Properties
 
+    private let userLabel = UILabel()
     private let driverLabel = UILabel()
     private let dateLabel = UILabel()
     private let originLabel = UILabel()
@@ -43,42 +44,31 @@ final class ListCell: UITableViewCell {
     }
 
     private func setupLabels() {
-        driverLabel.font = Typography.headline
-        driverLabel.textColor = Colors.onBackground
-
-        dateLabel.font = Typography.callout
-        dateLabel.textColor = Colors.placeholder
-
-        originLabel.font = Typography.callout
-        originLabel.textColor = Colors.onBackground
-
-        destinationLabel.font = Typography.callout
-        destinationLabel.textColor = Colors.onBackground
-
-        durationLabel.font = Typography.callout
-        durationLabel.textColor = Colors.onBackground
-
-        distanceLabel.font = Typography.callout
-        distanceLabel.textColor = Colors.onBackground
-
-        valueLabel.font = Typography.callout
-        valueLabel.textColor = Colors.onBackground
+        userLabel.configure(font: Typography.callout, textColor: Colors.onBackground)
+        driverLabel.configure(font: Typography.headline, textColor: Colors.onBackground)
+        dateLabel.configure(font: Typography.callout, textColor: Colors.placeholder)
+        originLabel.configure(font: Typography.callout, textColor: Colors.onBackground)
+        destinationLabel.configure(font: Typography.callout, textColor: Colors.onBackground)
+        durationLabel.configure(font: Typography.callout, textColor: Colors.onBackground)
+        distanceLabel.configure(font: Typography.callout, textColor: Colors.onBackground)
+        valueLabel.configure(font: Typography.callout, textColor: Colors.onBackground)
     }
 
     private func setupStackView() {
-        let mainStackView = UIStackView()
-        mainStackView.axis = .vertical
-        mainStackView.spacing = Spacing.small
-        mainStackView.addArrangedSubview(driverLabel)
-        mainStackView.addArrangedSubview(dateLabel)
-        mainStackView.addArrangedSubview(UIView())
-        mainStackView.addArrangedSubview(durationLabel)
-        mainStackView.addArrangedSubview(distanceLabel)
-        mainStackView.addArrangedSubview(valueLabel)
-        mainStackView.addArrangedSubview(UIView())
-        mainStackView.addArrangedSubview(iconStackView(color: Colors.secondary, label: originLabel))
-        mainStackView.addArrangedSubview(iconStackView(color: Colors.primary, label: destinationLabel))
-        mainStackView.fill(on: contentView, insets: .all(constant: 24))
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = Spacing.small
+        stack.addArrangedSubview(driverLabel)
+        stack.addArrangedSubview(dateLabel)
+        stack.addArrangedSubview(UIView())
+        stack.addArrangedSubview(userLabel)
+        stack.addArrangedSubview(durationLabel)
+        stack.addArrangedSubview(distanceLabel)
+        stack.addArrangedSubview(valueLabel)
+        stack.addArrangedSubview(UIView())
+        stack.addArrangedSubview(iconStackView(color: Colors.secondary, label: originLabel))
+        stack.addArrangedSubview(iconStackView(color: Colors.primary, label: destinationLabel))
+        stack.fill(on: contentView, insets: .all(constant: Spacing.large))
     }
 
     private func iconStackView(color: UIColor, label: UILabel) -> UIStackView {
@@ -103,11 +93,12 @@ final class ListCell: UITableViewCell {
 
     // MARK: Internal Methods
 
-    func setup(with viewModel: ListRow) {
+    func setup(with viewModel: RidesRow) {
         driverLabel.text = viewModel.driver
         dateLabel.text = viewModel.date
         originLabel.text = viewModel.origin
         destinationLabel.text = viewModel.destination
+        userLabel.text = "🧑‍🦱 \(viewModel.customerId)"
         durationLabel.text = "🕐 \(viewModel.duration)"
         distanceLabel.text = "🗺️ \(viewModel.distance)"
         valueLabel.text = "💲 \(viewModel.value)"

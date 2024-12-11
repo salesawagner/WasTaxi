@@ -7,14 +7,23 @@
 
 @testable import challenge
 
-extension ListRow {
-    static var mock: ListRow {
-        .init(driver: "", date: "", origin: "", destination: "", duration: "", distance: "", value: "")
+extension RidesRow {
+    static var mock: RidesRow {
+        .init(
+            customerId: "",
+            driver: "",
+            date: "",
+            origin: "",
+            destination: "",
+            duration: "",
+            distance: "",
+            value: ""
+        )
     }
 }
 
-extension Array where Element == ListRow {
-    static var mock: [ListRow] {
+extension Array where Element == RidesRow {
+    static var mock: [RidesRow] {
         [.mock]
     }
 }

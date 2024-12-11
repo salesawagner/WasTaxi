@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow()
 
-        let viewController = EstimateViewController(viewModel: EstimateViewModel(customerId: "CT01"))
+        let viewController = EstimateViewController(viewModel: EstimateViewModel())
         let navigationController = UINavigationController(rootViewController: viewController)
 
         window?.rootViewController = navigationController

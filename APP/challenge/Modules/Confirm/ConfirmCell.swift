@@ -44,41 +44,31 @@ final class ConfirmCell: UITableViewCell {
     }
 
     private func setupLabels() {
-        driverLabel.font = Typography.headline
-        driverLabel.textColor = Colors.onBackground
-
-        descriptionLabel.font = Typography.callout
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.textColor = Colors.placeholder
-
-        vehicleLabel.font = Typography.callout
-        vehicleLabel.textColor = Colors.onBackground
-
-        ratingLabel.font = Typography.callout
-        ratingLabel.textColor = Colors.onBackground
-
-        valueLabel.font = Typography.callout
-        valueLabel.textColor = Colors.onBackground
+        driverLabel.configure(font: Typography.headline, textColor: Colors.onBackground)
+        descriptionLabel.configure(font: Typography.callout, textColor: Colors.placeholder, numberOfLines: 0)
+        vehicleLabel.configure(font: Typography.callout, textColor: Colors.onBackground)
+        ratingLabel.configure(font: Typography.callout, textColor: Colors.onBackground)
+        valueLabel.configure(font: Typography.callout, textColor: Colors.onBackground)
     }
 
     private func setupActionButton() {
-        actionButton.configuration?.title = "Escolher"
+        actionButton.configuration?.title = "select".localized
         actionButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
     }
 
     private func setupStackView() {
-        let rideStackView = UIStackView()
-        rideStackView.axis = .vertical
-        rideStackView.spacing = Spacing.small
-        rideStackView.addArrangedSubview(driverLabel)
-        rideStackView.addArrangedSubview(descriptionLabel)
-        rideStackView.addArrangedSubview(ratingLabel)
-        rideStackView.addArrangedSubview(vehicleLabel)
-        rideStackView.addArrangedSubview(valueLabel)
-        rideStackView.addArrangedSubview(UIView())
-        rideStackView.addArrangedSubview(actionButton)
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = Spacing.small
+        stack.addArrangedSubview(driverLabel)
+        stack.addArrangedSubview(descriptionLabel)
+        stack.addArrangedSubview(ratingLabel)
+        stack.addArrangedSubview(vehicleLabel)
+        stack.addArrangedSubview(valueLabel)
+        stack.addArrangedSubview(UIView())
+        stack.addArrangedSubview(actionButton)
 
-        rideStackView.fill(on: contentView, insets: .all(constant: Spacing.large))
+        stack.fill(on: contentView, insets: .all(constant: Spacing.large))
     }
 
     // MARK: Internal Methods

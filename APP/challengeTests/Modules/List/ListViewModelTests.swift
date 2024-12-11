@@ -10,13 +10,13 @@ import API
 @testable import challenge
 
 final class ListViewModelTests: XCTestCase {
-    var viewModel: ListViewModelProtocol!
+    var viewModel: RidesViewModelProtocol!
     var mockService: WASAPIMock!
 
     override func setUp() {
         super.setUp()
         mockService = WASAPIMock()
-        viewModel = ListViewModel(api: mockService, customerId: "", driverId: "")
+        viewModel = RidesViewModel(api: mockService, customerId: "", driverId: "")
     }
 
     override func tearDown() {

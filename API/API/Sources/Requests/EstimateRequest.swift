@@ -9,9 +9,9 @@ public struct EstimateRequest: APIRequest {
         "ride/estimate"
     }
 
-    var customerId: String
-    var origin: String
-    var destination: String
+    var customerId: String?
+    var origin: String?
+    var destination: String?
 
     enum CodingKeys: String, CodingKey {
         case customerId = "customer_id"
@@ -26,7 +26,7 @@ public struct EstimateRequest: APIRequest {
         try? container.encodeIfPresent(self.destination, forKey: .destination)
     }
 
-    public init(customerId: String, origin: String, destination: String) {
+    public init(customerId: String?, origin: String?, destination: String?) {
         self.customerId = customerId
         self.origin = origin
         self.destination = destination

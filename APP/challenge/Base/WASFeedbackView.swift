@@ -48,7 +48,7 @@ final class WASFeedbackView: UIView {
     }
 
     private func setupImageView() {
-        imageView.image = .init(named: "error-found")
+        imageView.image = UIImage(resource: .errorFound)
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalToConstant: 100),
             imageView.heightAnchor.constraint(equalToConstant: 100)
@@ -57,7 +57,7 @@ final class WASFeedbackView: UIView {
 
     private func setupActionButton() {
         var configuration = UIButton.Configuration.filled()
-        configuration.baseBackgroundColor = UIColor.systemPink
+        configuration.baseBackgroundColor = Colors.primary
         configuration.cornerStyle = .medium
 
         actionButton.configuration = configuration
@@ -73,7 +73,7 @@ final class WASFeedbackView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.spacing = 20
+        stackView.spacing = Spacing.large
         addSubview(stackView)
 
         stackView.addArrangedSubview(titleLabel)

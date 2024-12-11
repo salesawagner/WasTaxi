@@ -9,6 +9,6 @@ import API
 
 extension RidesResponse {
     static var mock: RidesResponse {
-        .init(customerID: "", rides: [.mock])
+        .init(customerId: "", rides: [.mock])
     }
 }

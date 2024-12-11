@@ -40,7 +40,7 @@ final class ConfirmViewController: WASViewController {
 
     override func setupUI() {
         super.setupUI()
-        title = "Selecionar Motorista"
+        title = "select_driver".localized
         addBackButton()
         setupContentView()
         setupMapView()
@@ -79,7 +79,7 @@ final class ConfirmViewController: WASViewController {
             mapView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
             mapView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             mapView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            mapView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.5),
+            mapView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.3),
 
             tableView.topAnchor.constraint(equalTo: mapView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -94,6 +94,7 @@ final class ConfirmViewController: WASViewController {
         let annotation = MKPointAnnotation()
         annotation.coordinate = placemark.coordinate
         annotation.title = title
+
         return annotation
     }
 
@@ -156,8 +157,8 @@ final class ConfirmViewController: WASViewController {
             showLoading(false)
             showContentView(true)
             showAlert(title: "Sucesso", message: "Corrida solicitada com sucesso") { [weak self] in
-                let viewModel = ListViewModel(customerId: customerId, driverId: driverId)
-                let viewController = ListViewController(viewModel: viewModel)
+                let viewModel = RidesViewModel(customerId: customerId, driverId: driverId)
+                let viewController = RidesViewController(viewModel: viewModel)
                 self?.navigationController?.pushViewController(viewController, animated: true)
             }
 
