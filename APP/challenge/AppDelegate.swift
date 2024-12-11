@@ -19,8 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow()
 
-        let viewController = RidesViewController(viewModel: RidesViewModel(customerId: "CT01", driverId: nil))
-//        let viewController = EstimateViewController(viewModel: EstimateViewModel())
+        let viewController = EstimateViewController(viewModel: EstimateViewModel())
         let navigationController = UINavigationController(rootViewController: viewController)
 
         window?.rootViewController = navigationController
