@@ -14,7 +14,7 @@ enum RidesState {
     case failure(WASFeedbackViewDTO)
 }
 
-final class RidesViewModel {
+final class RidesViewModel: RidesViewModelProtocol {
     // MARK: Properties
 
     private(set) var state: RidesState = .idle {
@@ -27,11 +27,12 @@ final class RidesViewModel {
 
     private var api: APIClient
     private var customerId: String
-    private var driverId: String
+    private let driversRows: [DriversRow] = Driver.drivers.toRows
+    private var driverId: Int?
 
     // MARK: Inits
 
-    init(api: APIClient = DependencyContainer.apiClient, customerId: String, driverId: String) {
+    init(api: APIClient = DependencyContainer.apiClient, customerId: String, driverId: Int? = nil) {
         self.api = api
         self.customerId = customerId
         self.driverId = driverId
@@ -76,20 +77,8 @@ final class RidesViewModel {
             }
         }
     }
-}
 
-// MARK: - ListInputProtocol
-
-extension RidesViewModel: RidesViewModelProtocol {
-    func numberOfRows() -> Int {
-        guard case .success(let rows) = state else { return 0 }
-        return rows.count
-    }
-
-    func row(at index: Int) -> RidesRow? {
-        guard case .success(let rows) = state else { return nil }
-        return rows[index]
-    }
+    // MARK: Internal Methods
 
     func didTapReload() {
         requestList()
@@ -102,9 +91,33 @@ extension RidesViewModel: RidesViewModelProtocol {
     func viewDidLoad() {
         requestList()
     }
+
+    func numberOfRidesRows() -> Int {
+        guard case .success(let rows) = state else { return 0 }
+        return rows.count
+    }
+
+    func ridesRow(at index: Int) -> RidesRow? {
+        guard case .success(let rows) = state else { return nil }
+        return rows[index]
+    }
+
+    func numberOfDrivesRows() -> Int {
+        driversRows.count
+    }
+
+    func driversRow(at index: Int) -> DriversRow? {
+        driversRows[index]
+    }
+
+    func didSelectDriver(index: Int) {
+        let driver = driversRows[index]
+        driverId = driver.id
+        requestList()
+    }
 }
 
-// MARK: - RidesResponse Helper
+// MARK: - Helpers
 
 private extension RidesResponse {
     var toRows: [RidesRow] {
@@ -122,6 +135,16 @@ private extension RidesResponse {
             ))
         }
 
+        return rows
+    }
+}
+
+private extension Array where Element == Driver {
+    var toRows: [DriversRow] {
+        var rows: [DriversRow] = [.init(id: nil, name: "history".localized)]
+        forEach {
+            rows.append(.init(id: $0.id, name: $0.name))
+        }
         return rows
     }
 }

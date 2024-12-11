@@ -153,10 +153,10 @@ final class ConfirmViewController: WASViewController {
             showLoading(true)
             showContentView(false)
 
-        case .success(let customerId, let driverId):
+        case .success(let customerId):
             showLoading(false)
             showContentView(true)
-            let viewModel = RidesViewModel(customerId: customerId, driverId: driverId)
+            let viewModel = RidesViewModel(customerId: customerId)
             let viewController = RidesViewController(viewModel: viewModel)
             navigationController?.pushViewController(viewController, animated: true)
 

@@ -10,7 +10,7 @@ public struct RidesRequest: APIRequest {
     }
 
     var customerId: String
-    var driverId: String?
+    var driverId: Int?
 
     enum CodingKeys: String, CodingKey {
         case driverId = "driver_id"
@@ -21,7 +21,7 @@ public struct RidesRequest: APIRequest {
         try? container.encodeIfPresent(self.driverId, forKey: .driverId)
     }
 
-    public init(customerId: String, driverId: String?) {
+    public init(customerId: String, driverId: Int?) {
         self.customerId = customerId
         self.driverId = driverId
     }

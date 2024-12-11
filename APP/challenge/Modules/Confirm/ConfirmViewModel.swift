@@ -10,7 +10,7 @@ import API
 enum ConfirmState: Equatable {
     case idle
     case loading
-    case success(customerId: String, driverId: String)
+    case success(customerId: String)
     case failure(String)
 }
 
@@ -65,7 +65,7 @@ final class ConfirmViewModel: ConfirmViewModelProtocol {
             case .success(let response):
                 DispatchQueue.main.async {
                     if response.success {
-                        self?.state = .success(customerId: self?.customerId ?? "", driverId: "\(driver.id)")
+                        self?.state = .success(customerId: self?.customerId ?? "")
                     } else {
                         self?.state = .failure("generic_error".localized)
                     }

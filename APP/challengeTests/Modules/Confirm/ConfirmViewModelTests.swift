@@ -28,9 +28,8 @@ final class ConfirmViewModelTests: XCTestCase {
     func testDidTapActionButton_CallsServiceAndUpdatesState() {
         let expectation = XCTestExpectation(description: "State changes to success")
         viewModel.didChangeState = { state in
-            if case .success(let customerId, let driverId) = state {
+            if case .success(let customerId) = state {
                 XCTAssertNotNil(customerId)
-                XCTAssertNotNil(driverId)
                 expectation.fulfill()
             }
         }

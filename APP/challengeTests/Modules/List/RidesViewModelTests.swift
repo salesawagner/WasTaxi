@@ -1,5 +1,5 @@
 //
-//  ListViewModelTests.swift
+//  RidesViewModelTests.swift
 //  challengeTests
 //
 //  Created by Wagner Sales
@@ -9,14 +9,14 @@ import XCTest
 import API
 @testable import challenge
 
-final class ListViewModelTests: XCTestCase {
+final class RidesViewModelTests: XCTestCase {
     var viewModel: RidesViewModelProtocol!
     var mockService: WASAPIMock!
 
     override func setUp() {
         super.setUp()
         mockService = WASAPIMock()
-        viewModel = RidesViewModel(api: mockService, customerId: "", driverId: "")
+        viewModel = RidesViewModel(api: mockService, customerId: "")
     }
 
     override func tearDown() {
@@ -81,7 +81,7 @@ final class ListViewModelTests: XCTestCase {
         viewModel.viewDidLoad()
         wait(for: [expectation], timeout: 1.0)
 
-        XCTAssertEqual(viewModel.numberOfRows(), 1)
+        XCTAssertEqual(viewModel.numberOfRidesRows(), 1)
     }
 
     func testRowAtIndex_ReturnsCorrectRow() {
@@ -95,9 +95,24 @@ final class ListViewModelTests: XCTestCase {
         viewModel.viewDidLoad()
         wait(for: [expectation], timeout: 1.0)
 
-        let row = viewModel.row(at: 0)
+        let row = viewModel.ridesRow(at: 0)
         XCTAssertNotNil(row)
         XCTAssertEqual(row?.origin, "origin")
+    }
+
+    func testViewDidSelectDriver_CallsServiceAndUpdatesState() {
+        let expectation = XCTestExpectation(description: "State changes to success with rows")
+        viewModel.didChangeState = { state in
+            if case .success(let rows) = state {
+                XCTAssertEqual(rows.count, 1)
+                XCTAssertEqual(rows.first?.origin, "origin")
+                expectation.fulfill()
+            }
+        }
+
+        viewModel.didSelectDriver(index: 0)
+
+        wait(for: [expectation], timeout: 1.0)
     }
 
     func testViewDidLoad_FailureUpdatesState() {

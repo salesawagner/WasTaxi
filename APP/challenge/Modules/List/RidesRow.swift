@@ -17,3 +17,8 @@ struct RidesRow {
     let distance: String
     let value: String
 }
+
+struct DriversRow {
+    let id: Int?
+    let name: String
+}

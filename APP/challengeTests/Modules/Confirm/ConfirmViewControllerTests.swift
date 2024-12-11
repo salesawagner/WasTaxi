@@ -59,7 +59,7 @@ class ConfirmViewControllerTests: XCTestCase {
     }
 
     func testHandleStateChange_WhenStateIsSuccess() {
-        sut.handleStateChange(.success(customerId: "", driverId: ""))
+        sut.handleStateChange(.success(customerId: ""))
         XCTAssertFalse(sut.activityIndicator.isAnimating)
         XCTAssertFalse(sut.contentView.isHidden)
     }

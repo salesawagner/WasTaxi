@@ -74,13 +74,13 @@ class WASViewController: UIViewController {
     }
 
     func addBackButton() {
-        let backButton = UIButton(type: .custom)
-        let backImage = UIImage(named: "ic_chevron-left")?.withRenderingMode(.alwaysTemplate)
-        backButton.setImage(backImage, for: .normal)
-        backButton.tintColor = Colors.onSurface
-        backButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        let button = UIButton(type: .custom)
+        let image = UIImage(resource: .icChevronLeft).withRenderingMode(.alwaysTemplate)
+        button.setImage(image, for: .normal)
+        button.tintColor = Colors.onSurface
+        button.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
     }
 
     @objc func backButtonTapped() {

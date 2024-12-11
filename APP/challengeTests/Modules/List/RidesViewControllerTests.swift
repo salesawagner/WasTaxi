@@ -8,13 +8,13 @@
 import XCTest
 @testable import challenge
 
-class ListViewControllerTests: XCTestCase {
+class RidesViewControllerTests: XCTestCase {
     var sut: RidesViewController!
-    var spy: ListViewModelSpy!
+    var spy: RidesViewModelSpy!
 
     override func setUp() {
         super.setUp()
-        spy = ListViewModelSpy()
+        spy = RidesViewModelSpy()
         sut = RidesViewController(viewModel: spy)
         sut.loadViewIfNeeded()
     }
@@ -40,14 +40,24 @@ class ListViewControllerTests: XCTestCase {
         XCTAssertTrue(spy.receivedMessages.contains(.pullToRefresh))
     }
 
-    func testNumberOfRows_CallsViewModelNumberOfRows() {
+    func testNumberOfRidesRows_CallsViewModelNumberOfRidesRows() {
         _ = sut.tableView(UITableView(), numberOfRowsInSection: 0)
-        XCTAssertTrue(spy.receivedMessages.contains(.numberOfRows))
+        XCTAssertTrue(spy.receivedMessages.contains(.numberOfRidesRows))
     }
 
-    func testRowAt_CallsViewModelRowAt() {
+    func testRidesRowAt_CallsViewModelRidesRowAt() {
         _ = sut.tableView(UITableView(), cellForRowAt: .init(row: 0, section: 0))
-        XCTAssertTrue(spy.receivedMessages.contains(.row))
+        XCTAssertTrue(spy.receivedMessages.contains(.ridesRow))
+    }
+
+    func testNumberOfDriversRows_CallsViewModelNumberOfDriversRows() {
+        _ = sut.pickerView(UIPickerView(), numberOfRowsInComponent: 0)
+        XCTAssertTrue(spy.receivedMessages.contains(.numberOfDriversRows))
+    }
+
+    func testDriversRowAt_CallsViewModelDriversRowAt() {
+        _ = sut.pickerView(UIPickerView(), titleForRow: 0, forComponent: 0)
+        XCTAssertTrue(spy.receivedMessages.contains(.driversRow))
     }
 
     func testHandleStateChange_WhenStateIsIdle() {
