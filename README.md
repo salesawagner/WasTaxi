@@ -12,6 +12,9 @@ Para organizar e simplificar o desenvolvimento, empreguei as seguintes ferrament
 
 **Nota:** Optei por não adicionar os arquivos de projeto (`.xcworkspace`, `.xcodeproj`, etc.) e os Pods ao `.gitignore`. Isso foi feito propositalmente para facilitar a execução do projeto por vocês. 😉
 
+**Nota:**
+[MKMapView appears red on iOS 18 simulator + Xcode 16](https://forums.developer.apple.com/forums/thread/765787)
+
 Caso encontre alguma dificuldade, consulte a seção **Início Rápido** abaixo, onde detalho o passo a passo para configurar o projeto.
 
 ---
