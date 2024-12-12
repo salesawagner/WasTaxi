@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class WASAPI {
+public final class WASAPI {
     // MARK: Private Properties
 
     private var environment: APIEnvironment
