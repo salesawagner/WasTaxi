@@ -63,7 +63,7 @@ final class APITests: XCTestCase {
     func test_rides() throws {
         let expectation = XCTestExpectation(description: "test_rides")
         let api = WASAPI(environment: Environment.local)
-        api.rides(.init(customerId: "", driverId: "")) { result in
+        api.rides(.init(customerId: "")) { result in
             switch result {
             case .success(let response):
                 XCTAssertEqual(response.rides.count, 1)

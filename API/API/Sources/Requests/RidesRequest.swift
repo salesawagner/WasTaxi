@@ -21,7 +21,7 @@ public struct RidesRequest: APIRequest {
         try? container.encodeIfPresent(self.driverId, forKey: .driverId)
     }
 
-    public init(customerId: String, driverId: Int?) {
+    public init(customerId: String, driverId: Int? = nil) {
         self.customerId = customerId
         self.driverId = driverId
     }
